@@ -1,0 +1,22 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: e-comm-app
+  namespace: nginx
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: e-comm-app
+  template:
+    metadata:
+      name: e-comm-pod
+      labels:
+        app: e-comm-app
+
+    spec:
+      containers:
+      - name: e-comm
+        image: shyam8080/e-comm:1
+        ports:
+          - containerPort: 80

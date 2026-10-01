@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: e-comm-service
+  namespace: nginx
+spec:
+  selector:
+    app: e-comm-app
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 31000
+  type: NodePort
