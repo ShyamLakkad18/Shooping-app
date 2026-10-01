@@ -1,0 +1,19 @@
+/* ShopNova v6 */
+#searchLoader { position: fixed; inset: 0; z-index: 9500; display: grid; place-items: center; background: rgba(255,255,255,.93); backdrop-filter: blur(10px); opacity: 0; visibility: hidden; transition: opacity .35s, visibility .35s; }
+#searchLoader.show { opacity: 1; visibility: visible; }
+.sl-box { text-align: center; width: 440px; max-width: 90vw; }
+.sl-ring { position: relative; width: 96px; height: 96px; margin: 0 auto 22px; display: grid; place-items: center; font-size: 34px; color: #ff9900; }
+.sl-ring::before { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 5px solid #ffe2b3; border-top-color: #ff9900; animation: slSpin .9s linear infinite; }
+.sl-ring i { animation: slBounce .9s ease-in-out infinite; }
+@keyframes slSpin { to { transform: rotate(360deg); } }
+@keyframes slBounce { 50% { transform: translateY(-8px) scale(1.12); } }
+.sl-box h3 { font-size: 22px; letter-spacing: -.5px; }
+.sl-box em { color: #ff6a00; font-style: normal; }
+.sl-box p { color: #777; font-size: 13px; margin: 6px 0 18px; }
+.sl-bar { height: 5px; background: #eee; border-radius: 5px; overflow: hidden; }
+.sl-bar i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, #ff9900, #ff4f8b); }
+#searchLoader.show .sl-bar i { animation: slBar 1.4s ease forwards; }
+@keyframes slBar { to { width: 100%; } }
+.sl-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 26px; }
+.sl-cards b { aspect-ratio: 3 / 4; border-radius: 12px; background: linear-gradient(100deg, #eef0f2 30%, #f8f9fa 50%, #eef0f2 70%); background-size: 200% 100%; animation: skeletonShimmer 1.2s infinite; }
+@media (max-width: 600px) { .sl-cards { grid-template-columns: repeat(3, 1fr); } .sl-cards b:nth-child(4) { display: none; } }

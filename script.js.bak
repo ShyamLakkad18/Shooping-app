@@ -1,0 +1,2710 @@
+/* =========================================================
+   SHOPNOVA - MODERN E-COMMERCE JAVASCRIPT
+========================================================= */
+
+/* ================= PRODUCT DATABASE ================= */
+
+const products = [
+  {
+    id: 1,
+    name: "Women's Elegant Summer Dress",
+    category: "fashion",
+    gender: "women",
+    price: 1299,
+    oldPrice: 2499,
+    discount: 48,
+    rating: 4.8,
+    reviews: 2350,
+    image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&q=90",
+    description: "Elegant summer dress with a modern silhouette and comfortable premium fabric. Perfect for casual days, dinners and special occasions."
+  },
+  {
+    id: 2,
+    name: "Classic Denim Jacket",
+    category: "fashion",
+    gender: "men",
+    price: 1499,
+    oldPrice: 2999,
+    discount: 50,
+    rating: 4.6,
+    reviews: 970,
+    image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=90",
+    description: "Classic denim jacket designed for everyday style and comfortable layering."
+  },
+  {
+    id: 3,
+    name: "Women's Fashion Handbag",
+    category: "fashion",
+    gender: "women",
+    price: 999,
+    oldPrice: 1999,
+    discount: 50,
+    rating: 4.5,
+    reviews: 740,
+    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=90",
+    description: "Stylish everyday handbag with spacious compartments and a premium finish."
+  },
+  {
+    id: 4,
+    name: "Premium Travel Backpack",
+    category: "fashion",
+    gender: "men",
+    price: 1499,
+    oldPrice: 2799,
+    discount: 46,
+    rating: 4.6,
+    reviews: 2110,
+    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=90",
+    description: "Spacious and durable backpack suitable for travel, college and everyday use."
+  },
+  {
+    id: 5,
+    name: "Wireless Noise Cancelling Headphones",
+    category: "electronics",
+    gender: "men",
+    price: 2499,
+    oldPrice: 4999,
+    discount: 50,
+    rating: 4.8,
+    reviews: 5230,
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=90",
+    description: "Immersive wireless headphones with comfortable ear cushions and powerful sound."
+  },
+  {
+    id: 6,
+    name: "Smart Watch Pro Series",
+    category: "electronics",
+    gender: "men",
+    price: 2999,
+    oldPrice: 5999,
+    discount: 50,
+    rating: 4.6,
+    reviews: 3210,
+    image: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=800&q=90",
+    description: "Modern smartwatch with fitness tracking, notifications and smart everyday features."
+  },
+  {
+    id: 7,
+    name: "Ultra HD Laptop",
+    category: "electronics",
+    gender: "men",
+    price: 54999,
+    oldPrice: 69999,
+    discount: 21,
+    rating: 4.7,
+    reviews: 860,
+    image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=90",
+    description: "Powerful laptop for work, entertainment, study and everyday productivity."
+  },
+  {
+    id: 8,
+    name: "Wireless Bluetooth Speaker",
+    category: "electronics",
+    gender: "men",
+    price: 1499,
+    oldPrice: 2999,
+    discount: 50,
+    rating: 4.5,
+    reviews: 1840,
+    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=800&q=90",
+    description: "Portable Bluetooth speaker with rich audio and long-lasting battery life."
+  },
+  {
+    id: 9,
+    name: "Classic Running Sneakers",
+    category: "shoes",
+    gender: "men",
+    price: 1799,
+    oldPrice: 3499,
+    discount: 49,
+    rating: 4.7,
+    reviews: 4420,
+    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=90",
+    description: "Lightweight running sneakers designed for daily workouts and comfortable walking."
+  },
+  {
+    id: 10,
+    name: "Premium White Sneakers",
+    category: "shoes",
+    gender: "men",
+    price: 1999,
+    oldPrice: 3999,
+    discount: 50,
+    rating: 4.6,
+    reviews: 2680,
+    image: "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=800&q=90",
+    description: "Clean and minimal white sneakers suitable for casual everyday outfits."
+  },
+  {
+    id: 11,
+    name: "Sports Training Shoes",
+    category: "shoes",
+    gender: "men",
+    price: 2199,
+    oldPrice: 4299,
+    discount: 49,
+    rating: 4.5,
+    reviews: 1590,
+    image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=800&q=90",
+    description: "Comfortable sports shoes designed for training, gym sessions and active lifestyles."
+  },
+  {
+    id: 12,
+    name: "Women's Fashion Sneakers",
+    category: "shoes",
+    gender: "women",
+    price: 1599,
+    oldPrice: 2999,
+    discount: 47,
+    rating: 4.4,
+    reviews: 1100,
+    image: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=800&q=90",
+    description: "Trendy women's sneakers combining comfort with everyday street style."
+  },
+  {
+    id: 13,
+    name: "Hydrating Skincare Set",
+    category: "beauty",
+    gender: "women",
+    price: 899,
+    oldPrice: 1599,
+    discount: 44,
+    rating: 4.7,
+    reviews: 3150,
+    image: "https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=800&q=90",
+    description: "Daily skincare essentials designed to keep your skin fresh, hydrated and healthy."
+  },
+  {
+    id: 14,
+    name: "Luxury Perfume Collection",
+    category: "beauty",
+    gender: "women",
+    price: 1799,
+    oldPrice: 2999,
+    discount: 40,
+    rating: 4.8,
+    reviews: 2270,
+    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=800&q=90",
+    description: "Elegant fragrance collection with a long-lasting and sophisticated scent."
+  },
+  {
+    id: 15,
+    name: "Professional Makeup Kit",
+    category: "beauty",
+    gender: "women",
+    price: 1299,
+    oldPrice: 2499,
+    discount: 48,
+    rating: 4.5,
+    reviews: 1740,
+    image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=90",
+    description: "Complete makeup essentials for everyday looks and special occasions."
+  },
+  {
+    id: 16,
+    name: "Modern Decorative Lamp",
+    category: "home",
+    gender: "women",
+    price: 799,
+    oldPrice: 1499,
+    discount: 47,
+    rating: 4.6,
+    reviews: 890,
+    image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=90",
+    description: "Modern decorative lamp designed to add warmth and style to your room."
+  },
+  {
+    id: 17,
+    name: "Minimalist Home Chair",
+    category: "home",
+    gender: "women",
+    price: 3499,
+    oldPrice: 5999,
+    discount: 42,
+    rating: 4.5,
+    reviews: 520,
+    image: "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=800&q=90",
+    description: "Comfortable minimalist chair for living rooms, bedrooms and workspaces."
+  },
+  {
+    id: 18,
+    name: "Modern Coffee Table",
+    category: "home",
+    gender: "women",
+    price: 4999,
+    oldPrice: 7999,
+    discount: 38,
+    rating: 4.6,
+    reviews: 410,
+    image: "https://images.unsplash.com/photo-1532372320572-cda25653a26d?auto=format&fit=crop&w=800&q=90",
+    description: "Modern coffee table with a clean design for contemporary living spaces."
+  },
+  {
+    id: 19,
+    name: "RGB Gaming Keyboard",
+    category: "gaming",
+    gender: "men",
+    price: 1999,
+    oldPrice: 3999,
+    discount: 50,
+    rating: 4.8,
+    reviews: 3670,
+    image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=800&q=90",
+    description: "Gaming keyboard with colorful RGB lighting and responsive keys."
+  },
+  {
+    id: 20,
+    name: "Gaming Controller",
+    category: "gaming",
+    gender: "men",
+    price: 2299,
+    oldPrice: 3999,
+    discount: 43,
+    rating: 4.6,
+    reviews: 2210,
+    image: "https://images.unsplash.com/photo-1605901309584-818e25960a8f?auto=format&fit=crop&w=800&q=90",
+    description: "Comfortable wireless gaming controller for immersive gaming sessions."
+  },
+  {
+    id: 21,
+    name: "RGB Gaming Headset",
+    category: "gaming",
+    gender: "men",
+    price: 1699,
+    oldPrice: 2999,
+    discount: 43,
+    rating: 4.5,
+    reviews: 1850,
+    image: "https://images.unsplash.com/photo-1599669454699-248893623440?auto=format&fit=crop&w=800&q=90",
+    description: "Gaming headset with immersive sound, microphone and RGB lighting."
+  },
+  {
+    id: 22,
+    name: "The Art of Modern Living",
+    category: "books",
+    gender: "women",
+    price: 499,
+    oldPrice: 799,
+    discount: 38,
+    rating: 4.7,
+    reviews: 930,
+    image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=800&q=90",
+    description: "An inspiring book about creativity, lifestyle and modern living."
+  },
+  {
+    id: 23,
+    name: "The Complete Technology Guide",
+    category: "books",
+    gender: "men",
+    price: 699,
+    oldPrice: 999,
+    discount: 30,
+    rating: 4.8,
+    reviews: 1240,
+    image: "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=800&q=90",
+    description: "A beginner-friendly technology guide covering modern digital concepts."
+  },
+
+  /* ================= NEW MEN PRODUCTS ================= */
+
+  {
+    id: 24,
+    name: "Men's Premium Casual Shirt",
+    category: "fashion",
+    gender: "men",
+    price: 1499,
+    oldPrice: 2499,
+    discount: 40,
+    rating: 4.7,
+    reviews: 1250,
+    image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=90",
+    description: "Premium casual shirt designed for a stylish and comfortable everyday look."
+  },
+  {
+    id: 25,
+    name: "Men's Classic Black Jacket",
+    category: "fashion",
+    gender: "men",
+    price: 2499,
+    oldPrice: 4499,
+    discount: 44,
+    rating: 4.8,
+    reviews: 980,
+    image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=90",
+    description: "Classic jacket designed for modern casual and evening outfits."
+  },
+  {
+    id: 26,
+    name: "Men's Slim Fit T-Shirt",
+    category: "fashion",
+    gender: "men",
+    price: 799,
+    oldPrice: 1499,
+    discount: 47,
+    rating: 4.6,
+    reviews: 2100,
+    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=90",
+    description: "Comfortable slim fit t-shirt for everyday casual wear."
+  },
+  {
+    id: 27,
+    name: "Men's Leather Watch",
+    category: "fashion",
+    gender: "men",
+    price: 2499,
+    oldPrice: 4999,
+    discount: 50,
+    rating: 4.8,
+    reviews: 870,
+    image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=90",
+    description: "Elegant leather watch with a premium modern design."
+  },
+
+  /* ================= NEW WOMEN PRODUCTS ================= */
+
+  {
+    id: 28,
+    name: "Women's Premium Floral Dress",
+    category: "fashion",
+    gender: "women",
+    price: 1899,
+    oldPrice: 3499,
+    discount: 46,
+    rating: 4.8,
+    reviews: 1640,
+    image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=90",
+    description: "Beautiful floral dress designed for elegant casual and party looks."
+  },
+  {
+    id: 29,
+    name: "Women's Stylish Blazer",
+    category: "fashion",
+    gender: "women",
+    price: 2299,
+    oldPrice: 3999,
+    discount: 43,
+    rating: 4.7,
+    reviews: 920,
+    image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=90",
+    description: "Modern stylish blazer with a premium fashionable finish."
+  },
+  {
+    id: 30,
+    name: "Women's Elegant Heels",
+    category: "shoes",
+    gender: "women",
+    price: 1799,
+    oldPrice: 3299,
+    discount: 45,
+    rating: 4.6,
+    reviews: 1380,
+    image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=90",
+    description: "Elegant heels designed for parties, celebrations and special occasions."
+  },
+  {
+    id: 31,
+    name: "Women's Luxury Shoulder Bag",
+    category: "fashion",
+    gender: "women",
+    price: 2199,
+    oldPrice: 4499,
+    discount: 51,
+    rating: 4.8,
+    reviews: 780,
+    image: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=800&q=90",
+    description: "Premium shoulder bag with elegant styling and spacious storage."
+  },
+
+  /* ================= NEW REAL-WORLD PRODUCTS ================= */
+
+  {
+    id: 32,
+    name: "Latest 5G Smartphone",
+    category: "electronics",
+    gender: "men",
+    price: 18999,
+    oldPrice: 24999,
+    discount: 24,
+    rating: 4.6,
+    reviews: 6420,
+    image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=800&q=90",
+    description: "A powerful 5G smartphone with a smooth display, all-day battery and a versatile camera setup."
+  },
+  {
+    id: 33,
+    name: "10-inch Android Tablet",
+    category: "electronics",
+    gender: "women",
+    price: 12999,
+    oldPrice: 17999,
+    discount: 28,
+    rating: 4.5,
+    reviews: 1980,
+    image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=800&q=90",
+    description: "Lightweight tablet perfect for streaming, browsing and everyday productivity."
+  },
+  {
+    id: 34,
+    name: "3-Seater Fabric Sofa",
+    category: "home",
+    gender: "women",
+    price: 18999,
+    oldPrice: 27999,
+    discount: 32,
+    rating: 4.6,
+    reviews: 640,
+    image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=800&q=90",
+    description: "Comfortable 3-seater sofa with soft upholstery, built for cozy living rooms."
+  },
+  {
+    id: 35,
+    name: "Multi-Purpose Kitchen Blender",
+    category: "home",
+    gender: "women",
+    price: 1799,
+    oldPrice: 2999,
+    discount: 40,
+    rating: 4.5,
+    reviews: 3020,
+    image: "https://images.unsplash.com/photo-1585515320310-259814833e62?auto=format&fit=crop&w=800&q=90",
+    description: "High-speed blender for smoothies, chutneys and everyday kitchen prep."
+  },
+  {
+    id: 36,
+    name: "Classic Aviator Sunglasses",
+    category: "fashion",
+    gender: "men",
+    price: 899,
+    oldPrice: 1799,
+    discount: 50,
+    rating: 4.6,
+    reviews: 2140,
+    image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=90",
+    description: "Timeless aviator sunglasses with UV protection and a durable metal frame."
+  },
+  {
+    id: 37,
+    name: "Men's Genuine Leather Wallet",
+    category: "fashion",
+    gender: "men",
+    price: 699,
+    oldPrice: 1299,
+    discount: 46,
+    rating: 4.7,
+    reviews: 1870,
+    image: "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=800&q=90",
+    description: "Slim genuine leather wallet with multiple card slots and a durable finish."
+  },
+
+  /* ================= INNERWEAR & LOUNGEWEAR ================= */
+
+  {
+    id: 38,
+    name: "Women's Everyday Cotton Sports Bra",
+    category: "innerwear",
+    gender: "women",
+    price: 499,
+    oldPrice: 999,
+    discount: 50,
+    rating: 4.6,
+    reviews: 3840,
+    image: "https://images.unsplash.com/photo-1628971021877-37187fde57f4?auto=format&fit=crop&w=800&q=90",
+    description: "Breathable everyday cotton-blend sports bra with medium support, soft elastic band and tag-free comfort for all-day wear."
+  },
+  {
+    id: 39,
+    name: "Women's Cotton Lounge Co-ord Set",
+    category: "innerwear",
+    gender: "women",
+    price: 899,
+    oldPrice: 1599,
+    discount: 44,
+    rating: 4.6,
+    reviews: 1420,
+    image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=90",
+    description: "Soft cotton co-ord loungewear set designed for relaxed comfort at home, ideal for sleep or casual everyday wear."
+  },
+  {
+    id: 40,
+    name: "Women's Thermal Innerwear Set",
+    category: "innerwear",
+    gender: "women",
+    price: 799,
+    oldPrice: 1399,
+    discount: 43,
+    rating: 4.5,
+    reviews: 960,
+    image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=90",
+    description: "Warm and lightweight thermal innerwear set that layers comfortably under regular clothing during colder months."
+  },
+  {
+    id: 41,
+    name: "Men's Cotton Vests (Pack of 3)",
+    category: "innerwear",
+    gender: "men",
+    price: 599,
+    oldPrice: 999,
+    discount: 40,
+    rating: 4.6,
+    reviews: 4210,
+    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=90",
+    description: "Everyday soft cotton vests with a comfortable round neck, breathable fabric and a relaxed regular fit — pack of 3."
+  },
+  {
+    id: 42,
+    name: "Men's Cotton Boxer Shorts (Pack of 3)",
+    category: "innerwear",
+    gender: "men",
+    price: 649,
+    oldPrice: 1099,
+    discount: 41,
+    rating: 4.5,
+    reviews: 2760,
+    image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=90",
+    description: "Comfortable pure cotton boxer shorts with an elastic waistband, breathable fabric and all-day comfort — pack of 3."
+  },
+  {
+    id: 43,
+    name: "Men's Thermal Base Layer Set",
+    category: "innerwear",
+    gender: "men",
+    price: 849,
+    oldPrice: 1499,
+    discount: 43,
+    rating: 4.6,
+    reviews: 1180,
+    image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=90",
+    description: "Lightweight thermal base layer set that traps warmth without bulk, perfect for layering in winter."
+  }
+];
+
+
+/* ================= STATE ================= */
+
+let cart = JSON.parse(localStorage.getItem("shopnovaCart")) || [];
+let wishlist = JSON.parse(localStorage.getItem("shopnovaWishlist")) || [];
+
+let currentCategory = "all";
+let currentSearch = "";
+
+let adIndex = 0;
+let adTimer;
+
+let dealSeconds = 8 * 60 * 60 + 42 * 60 + 19;
+
+
+/* ================= LIVE / REAL-TIME STATE ================= */
+
+/* Live viewer counts per product id (simulated real-time browsing activity) */
+const liveViewerCounts = {};
+
+/* Live stock levels per product id (simulated real-time inventory) */
+const liveStockLevels = {};
+
+products.forEach(product => {
+  liveViewerCounts[product.id] = 6 + Math.floor(Math.random() * 45);
+  /* Higher rated / more reviewed products run lower stock more often, like real bestsellers */
+  const base = product.reviews > 2500 ? 4 : 8;
+  liveStockLevels[product.id] = base + Math.floor(Math.random() * 22);
+});
+
+const liveCities = [
+  "Mumbai", "Delhi", "Bengaluru", "Ahmedabad", "Pune",
+  "Hyderabad", "Chennai", "Jaipur", "Surat", "Lucknow",
+  "Kolkata", "Chandigarh", "Indore", "Nagpur", "Kochi"
+];
+
+const liveFirstNames = [
+  "Rahul", "Priya", "Amit", "Sneha", "Vikram", "Anjali",
+  "Rohan", "Kavya", "Arjun", "Neha", "Karan", "Divya",
+  "Sanjay", "Pooja", "Rajesh", "Meera"
+];
+
+let liveActivityTimer = null;
+let liveActivityIndex = 0;
+let liveActivityDismissed = false;
+
+
+/* ================= ELEMENTS ================= */
+
+const productGrid = document.getElementById("productGrid");
+const dealProducts = document.getElementById("dealProducts");
+
+const menProductsGrid = document.getElementById("menProducts");
+const womenProductsGrid = document.getElementById("womenProducts");
+
+const productTitle = document.getElementById("productTitle");
+const noResults = document.getElementById("noResults");
+
+const cartDrawer = document.getElementById("cartDrawer");
+const cartOverlay = document.getElementById("cartOverlay");
+const cartItems = document.getElementById("cartItems");
+const cartCount = document.getElementById("cartCount");
+const cartTotal = document.getElementById("cartTotal");
+
+const searchInput = document.getElementById("searchInput");
+const searchCategory = document.getElementById("searchCategory");
+
+const toast = document.getElementById("toast");
+const toastText = document.getElementById("toastText");
+
+const sidebar = document.getElementById("sidebar");
+const overlay = document.getElementById("overlay");
+
+const modalOverlay = document.getElementById("productModalOverlay");
+
+
+/* ================= HELPERS ================= */
+
+function formatPrice(price) {
+  return "₹" + Number(price).toLocaleString("en-IN");
+}
+
+
+function categoryName(category) {
+
+  const names = {
+    fashion: "Fashion",
+    electronics: "Electronics",
+    shoes: "Shoes",
+    beauty: "Beauty",
+    home: "Home",
+    gaming: "Gaming",
+    books: "Books",
+    innerwear: "Innerwear"
+  };
+
+  return names[category] || "Products";
+}
+
+
+function stars(rating) {
+
+  let result = "";
+
+  for (let i = 1; i <= 5; i++) {
+
+    if (rating >= i) {
+      result += '<i class="fa-solid fa-star"></i>';
+    } else if (rating >= i - .5) {
+      result += '<i class="fa-solid fa-star-half-stroke"></i>';
+    } else {
+      result += '<i class="fa-regular fa-star"></i>';
+    }
+
+  }
+
+  return result;
+}
+
+
+/* ================= LIVE / REAL-TIME HELPERS ================= */
+
+function getStockBadge(productId) {
+
+  const stock = liveStockLevels[productId];
+
+  if (stock === undefined || stock > 15) {
+    return "";
+  }
+
+  const critical = stock <= 6;
+
+  return `
+    <span class="stock-left ${critical ? "critical" : ""}">
+      <i class="fa-solid fa-bolt"></i>
+      Only ${stock} left
+    </span>
+  `;
+
+}
+
+
+function getViewerLine(productId) {
+
+  const viewers = liveViewerCounts[productId] || 0;
+
+  if (viewers < 12) return "";
+
+  return `
+    <div class="live-viewers">
+      <i class="fa-solid fa-eye"></i>
+      ${viewers} people viewing this right now
+    </div>
+  `;
+
+}
+
+
+function getTrendingBadge(product) {
+
+  if (product.reviews < 2000) return "";
+
+  return `
+    <span class="trending-badge">
+      <i class="fa-solid fa-fire"></i>
+      Trending
+    </span>
+  `;
+
+}
+
+
+/* Nudge live viewer counts and stock levels gently, like real dashboards do */
+function tickLiveNumbers() {
+
+  products.forEach(product => {
+
+    const drift = Math.floor(Math.random() * 5) - 2;
+    liveViewerCounts[product.id] = Math.max(
+      4,
+      liveViewerCounts[product.id] + drift
+    );
+
+    if (liveStockLevels[product.id] > 2 && Math.random() < 0.12) {
+      liveStockLevels[product.id] -= 1;
+    }
+
+  });
+
+  renderProducts();
+  renderDeals();
+  renderMenProducts();
+  renderWomenProducts();
+
+}
+
+
+setInterval(tickLiveNumbers, 12000);
+
+
+/* Live "someone just bought this" activity popup */
+function showLiveActivityPopup() {
+
+  const activityEl = document.getElementById("liveActivity");
+
+  if (!activityEl || liveActivityDismissed) return;
+
+  const product =
+    products[Math.floor(Math.random() * products.length)];
+
+  const name =
+    liveFirstNames[Math.floor(Math.random() * liveFirstNames.length)];
+
+  const city =
+    liveCities[Math.floor(Math.random() * liveCities.length)];
+
+  const minutesAgo = 1 + Math.floor(Math.random() * 8);
+
+  const imgEl = document.getElementById("liveActivityImg");
+  const textEl = document.getElementById("liveActivityText");
+  const timeEl = document.getElementById("liveActivityTime");
+
+  if (imgEl) {
+    imgEl.src = product.image;
+    imgEl.alt = product.name;
+  }
+
+  if (textEl) {
+    textEl.textContent = `${name} from ${city} just bought "${product.name}"`;
+  }
+
+  if (timeEl) {
+    timeEl.textContent = `${minutesAgo} minute${minutesAgo > 1 ? "s" : ""} ago`;
+  }
+
+  activityEl.classList.add("active");
+
+  clearTimeout(liveActivityTimer);
+
+  liveActivityTimer = setTimeout(() => {
+    activityEl.classList.remove("active");
+  }, 5500);
+
+}
+
+
+function startLiveActivityLoop() {
+
+  /* First popup appears after a short delay, then repeats every ~9-16s */
+  setTimeout(showLiveActivityPopup, 4000);
+
+  setInterval(() => {
+
+    const gap = 9000 + Math.random() * 7000;
+
+    setTimeout(showLiveActivityPopup, gap);
+
+  }, 16000);
+
+}
+
+
+const liveActivityClose = document.getElementById("liveActivityClose");
+
+if (liveActivityClose) {
+
+  liveActivityClose.addEventListener("click", () => {
+
+    const activityEl = document.getElementById("liveActivity");
+
+    if (activityEl) {
+      activityEl.classList.remove("active");
+    }
+
+    liveActivityDismissed = true;
+
+    clearTimeout(liveActivityTimer);
+
+  });
+
+}
+
+
+/* ================= FILTER ================= */
+
+function getFilteredProducts() {
+
+  return products.filter(product => {
+
+    const categoryMatch =
+      currentCategory === "all" ||
+      product.category === currentCategory;
+
+    const searchMatch =
+      product.name
+        .toLowerCase()
+        .includes(currentSearch.toLowerCase());
+
+    return categoryMatch && searchMatch;
+
+  });
+
+}
+
+
+function setCategory(category) {
+
+  currentCategory = category;
+  currentSearch = "";
+
+  if (searchInput) {
+    searchInput.value = "";
+  }
+
+  if (productTitle) {
+    productTitle.textContent =
+      category === "all"
+        ? "Popular Products"
+        : `${categoryName(category)} Collection`;
+  }
+
+  renderProducts(true);
+
+  const productsSection =
+    document.getElementById("products");
+
+  if (productsSection) {
+    productsSection.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }
+
+  closeSidebar();
+
+}
+
+
+function updateFilterButtons() {
+
+  document
+    .querySelectorAll(".filter-btn")
+    .forEach(button => {
+
+      button.classList.toggle(
+        "active",
+        button.dataset.category === currentCategory
+      );
+
+    });
+
+}
+
+
+/* ================= PRODUCT CARD ================= */
+
+function productCard(product, index = 0) {
+
+  const liked =
+    wishlist.includes(product.id);
+
+  return `
+
+    <article class="product-card reveal" style="--card-index:${index % 12}">
+
+      <div
+        class="product-image"
+        data-product="${product.id}"
+      >
+
+        <span class="discount-badge">
+          ${product.discount}% OFF
+        </span>
+
+        ${getTrendingBadge(product)}
+
+        <button
+          class="wishlist ${liked ? "active" : ""}"
+          data-wishlist="${product.id}"
+          aria-label="Wishlist"
+        >
+          <i class="${liked ? "fa-solid" : "fa-regular"} fa-heart"></i>
+        </button>
+
+        <img
+          src="${product.image}"
+          alt="${product.name}"
+          loading="lazy"
+        >
+
+        <button class="quick-view-btn" data-product="${product.id}">
+          <i class="fa-solid fa-eye"></i>
+          Quick View
+        </button>
+
+      </div>
+
+      <div class="product-info">
+
+        <span class="product-category">
+          ${categoryName(product.category)}
+        </span>
+
+        <h3
+          class="product-name"
+          data-product="${product.id}"
+        >
+          ${product.name}
+        </h3>
+
+        <div class="rating">
+
+          <span class="stars">
+            ${stars(product.rating)}
+          </span>
+
+          <span class="rating-count">
+            ${product.rating}
+            (${product.reviews.toLocaleString("en-IN")})
+          </span>
+
+        </div>
+
+        ${getViewerLine(product.id)}
+
+        <div class="price-row">
+
+          <strong class="price">
+            ${formatPrice(product.price)}
+          </strong>
+
+          <span class="old-price">
+            ${formatPrice(product.oldPrice)}
+          </span>
+
+        </div>
+
+        ${getStockBadge(product.id)}
+
+        <button
+          class="add-cart"
+          data-add-cart="${product.id}"
+        >
+          <span class="add-cart-label">
+            <i class="fa-solid fa-cart-plus"></i>
+            Add to Cart
+          </span>
+        </button>
+
+      </div>
+
+    </article>
+
+  `;
+}
+
+
+/* Skeleton placeholder markup shown briefly during category/search switches */
+function skeletonCard() {
+  return `
+    <div class="product-skeleton">
+      <div class="skeleton-image"></div>
+      <div class="skeleton-line"></div>
+      <div class="skeleton-line short"></div>
+    </div>
+  `;
+}
+
+
+/* ================= RENDER PRODUCTS ================= */
+
+let productRenderToken = 0;
+
+function renderProducts(withTransition = false) {
+
+  if (!productGrid) return;
+
+  const filtered =
+    getFilteredProducts();
+
+  const paint = () => {
+
+    productGrid.innerHTML =
+      filtered.map((product, index) => productCard(product, index)).join("");
+
+    if (noResults) {
+      noResults.classList.toggle(
+        "active",
+        filtered.length === 0
+      );
+    }
+
+    updateFilterButtons();
+
+    productGrid.classList.remove("switching");
+
+    setTimeout(initReveal, 50);
+
+  };
+
+  if (!withTransition) {
+    paint();
+    return;
+  }
+
+  /* Smooth Amazon-like transition: brief skeleton shimmer before new results paint in */
+  const token = ++productRenderToken;
+
+  productGrid.classList.add("switching");
+
+  setTimeout(() => {
+
+    if (token !== productRenderToken) return;
+
+    productGrid.innerHTML =
+      Array.from({ length: Math.min(filtered.length || 4, 8) })
+        .map(skeletonCard)
+        .join("");
+
+    setTimeout(() => {
+
+      if (token !== productRenderToken) return;
+
+      paint();
+
+    }, 260);
+
+  }, 120);
+
+}
+
+
+/* ================= DEALS ================= */
+
+function renderDeals() {
+
+  if (!dealProducts) return;
+
+  const deals =
+    [...products]
+      .sort((a, b) => b.discount - a.discount)
+      .slice(0, 4);
+
+  dealProducts.innerHTML =
+    deals.map((product, index) => productCard(product, index)).join("");
+
+}
+
+
+/* ================= MEN PRODUCTS ================= */
+
+function renderMenProducts() {
+
+  if (!menProductsGrid) return;
+
+  const menProducts =
+    products
+      .filter(product => product.gender === "men")
+      .slice(0, 8);
+
+  menProductsGrid.innerHTML =
+    menProducts.map((product, index) => productCard(product, index)).join("");
+
+}
+
+
+/* ================= WOMEN PRODUCTS ================= */
+
+function renderWomenProducts() {
+
+  if (!womenProductsGrid) return;
+
+  const womenProducts =
+    products
+      .filter(product => product.gender === "women")
+      .slice(0, 8);
+
+  womenProductsGrid.innerHTML =
+    womenProducts.map((product, index) => productCard(product, index)).join("");
+
+}
+
+
+/* ================= SEARCH ================= */
+
+function performSearch() {
+
+  if (!searchInput) return;
+
+  currentSearch =
+    searchInput.value.trim();
+
+  currentCategory =
+    searchCategory && searchCategory.value !== "all"
+      ? searchCategory.value
+      : "all";
+
+  if (productTitle) {
+    productTitle.textContent =
+      currentSearch
+        ? `Search Results for "${currentSearch}"`
+        : "Popular Products";
+  }
+
+  renderProducts(true);
+
+  const productsSection =
+    document.getElementById("products");
+
+  if (productsSection) {
+    productsSection.scrollIntoView({
+      behavior: "smooth"
+    });
+  }
+
+}
+
+
+const searchBtn =
+  document.getElementById("searchBtn");
+
+if (searchBtn) {
+  searchBtn.addEventListener(
+    "click",
+    performSearch
+  );
+}
+
+
+if (searchInput) {
+  searchInput.addEventListener(
+    "keydown",
+    event => {
+      if (event.key === "Enter") {
+        performSearch();
+      }
+    }
+  );
+}
+
+
+/* ================= CART ================= */
+
+function saveCart() {
+  localStorage.setItem(
+    "shopnovaCart",
+    JSON.stringify(cart)
+  );
+}
+
+
+function addToCart(id) {
+
+  const product =
+    products.find(p => p.id === id);
+
+  if (!product) return;
+
+  const existing =
+    cart.find(item => item.id === id);
+
+  if (existing) {
+    existing.quantity++;
+  } else {
+    cart.push({
+      id,
+      quantity: 1
+    });
+  }
+
+  saveCart();
+  renderCart();
+
+  showToast(
+    `${product.name} added to cart`
+  );
+
+  animateCartIcon();
+
+}
+
+
+function removeFromCart(id) {
+
+  cart =
+    cart.filter(item => item.id !== id);
+
+  saveCart();
+  renderCart();
+
+}
+
+
+function changeQuantity(id, amount) {
+
+  const item =
+    cart.find(item => item.id === id);
+
+  if (!item) return;
+
+  item.quantity += amount;
+
+  if (item.quantity <= 0) {
+    removeFromCart(id);
+    return;
+  }
+
+  saveCart();
+  renderCart();
+
+}
+
+
+function renderCart() {
+
+  if (!cartItems) return;
+
+  if (cart.length === 0) {
+
+    cartItems.innerHTML = `
+      <div class="empty-cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <h3>Your cart is empty</h3>
+        <p>Add products to see them here.</p>
+      </div>
+    `;
+
+  } else {
+
+    cartItems.innerHTML =
+      cart.map(item => {
+
+        const product =
+          products.find(p => p.id === item.id);
+
+        if (!product) return "";
+
+        return `
+          <div class="cart-item">
+
+            <img
+              src="${product.image}"
+              alt="${product.name}"
+            >
+
+            <div class="cart-item-info">
+
+              <h4>${product.name}</h4>
+
+              <div class="cart-item-price">
+                ${formatPrice(product.price * item.quantity)}
+              </div>
+
+              <div class="quantity">
+
+                <button
+                  data-quantity="${product.id}"
+                  data-change="-1"
+                >
+                  −
+                </button>
+
+                <span>${item.quantity}</span>
+
+                <button
+                  data-quantity="${product.id}"
+                  data-change="1"
+                >
+                  +
+                </button>
+
+              </div>
+
+              <button
+                class="remove-cart"
+                data-remove="${product.id}"
+              >
+                Remove
+              </button>
+
+            </div>
+
+          </div>
+        `;
+
+      }).join("");
+
+  }
+
+  let total = 0;
+  let count = 0;
+
+  cart.forEach(item => {
+
+    const product =
+      products.find(p => p.id === item.id);
+
+    if (!product) return;
+
+    total +=
+      product.price * item.quantity;
+
+    count += item.quantity;
+
+  });
+
+  if (cartTotal) {
+    cartTotal.textContent =
+      formatPrice(total);
+  }
+
+  if (cartCount) {
+    cartCount.textContent =
+      count;
+  }
+
+}
+
+
+/* ================= CART EVENTS ================= */
+
+document.addEventListener(
+  "click",
+  event => {
+
+    const add =
+      event.target.closest("[data-add-cart]");
+
+    if (add) {
+
+      addToCart(
+        Number(add.dataset.addCart)
+      );
+
+      if (add.classList.contains("add-cart")) {
+
+        const label = add.querySelector(".add-cart-label");
+        const originalHTML = label ? label.innerHTML : null;
+
+        add.classList.add("added");
+
+        if (label) {
+          label.innerHTML = '<i class="fa-solid fa-check"></i> Added!';
+        }
+
+        setTimeout(() => {
+
+          add.classList.remove("added");
+
+          if (label && originalHTML) {
+            label.innerHTML = originalHTML;
+          }
+
+        }, 1300);
+
+      }
+
+      return;
+    }
+
+    const quantity =
+      event.target.closest("[data-quantity]");
+
+    if (quantity) {
+
+      changeQuantity(
+        Number(quantity.dataset.quantity),
+        Number(quantity.dataset.change)
+      );
+
+      return;
+    }
+
+    const remove =
+      event.target.closest("[data-remove]");
+
+    if (remove) {
+
+      removeFromCart(
+        Number(remove.dataset.remove)
+      );
+
+    }
+
+  }
+);
+
+
+/* ================= CART DRAWER ================= */
+
+function openCart() {
+
+  if (cartDrawer) {
+    cartDrawer.classList.add("active");
+  }
+
+  if (cartOverlay) {
+    cartOverlay.classList.add("active");
+  }
+
+  document.body.classList.add("drawer-open");
+
+}
+
+
+function closeCart() {
+
+  if (cartDrawer) {
+    cartDrawer.classList.remove("active");
+  }
+
+  if (cartOverlay) {
+    cartOverlay.classList.remove("active");
+  }
+
+  document.body.classList.remove("drawer-open");
+
+}
+
+
+const cartBtn =
+  document.getElementById("cartBtn");
+
+const closeCartBtn =
+  document.getElementById("closeCart");
+
+if (cartBtn) {
+  cartBtn.addEventListener(
+    "click",
+    openCart
+  );
+}
+
+if (closeCartBtn) {
+  closeCartBtn.addEventListener(
+    "click",
+    closeCart
+  );
+}
+
+if (cartOverlay) {
+  cartOverlay.addEventListener(
+    "click",
+    closeCart
+  );
+}
+
+
+/* ================= CART ANIMATION ================= */
+
+function animateCartIcon() {
+
+  const icon =
+    document.querySelector(".cart-icon");
+
+  if (!icon) return;
+
+  icon.animate(
+    [
+      { transform: "scale(1)" },
+      { transform: "scale(1.35) rotate(-8deg)" },
+      { transform: "scale(1) rotate(0)" }
+    ],
+    {
+      duration: 450,
+      easing: "ease-out"
+    }
+  );
+
+}
+
+
+/* ================= WISHLIST ================= */
+
+function toggleWishlist(id) {
+
+  const product =
+    products.find(p => p.id === id);
+
+  if (!product) return;
+
+  if (wishlist.includes(id)) {
+
+    wishlist =
+      wishlist.filter(item => item !== id);
+
+    showToast(
+      `${product.name} removed from wishlist`
+    );
+
+  } else {
+
+    wishlist.push(id);
+
+    showToast(
+      `${product.name} added to wishlist ❤️`
+    );
+
+  }
+
+  localStorage.setItem(
+    "shopnovaWishlist",
+    JSON.stringify(wishlist)
+  );
+
+  renderProducts();
+  renderDeals();
+  renderMenProducts();
+  renderWomenProducts();
+
+}
+
+
+document.addEventListener(
+  "click",
+  event => {
+
+    const button =
+      event.target.closest("[data-wishlist]");
+
+    if (!button) return;
+
+    event.stopPropagation();
+
+    toggleWishlist(
+      Number(button.dataset.wishlist)
+    );
+
+  }
+);
+
+
+/* ================= PRODUCT MODAL ================= */
+
+function openProductModal(id) {
+
+  const product =
+    products.find(p => p.id === id);
+
+  if (!product || !modalOverlay) return;
+
+  const modalContent =
+    document.getElementById("modalContent");
+
+  if (!modalContent) return;
+
+  const viewers = liveViewerCounts[id] || 0;
+  const stock = liveStockLevels[id];
+
+  modalContent.innerHTML = `
+
+    <div class="modal-product">
+
+      <div class="modal-image">
+        <img
+          src="${product.image}"
+          alt="${product.name}"
+        >
+      </div>
+
+      <div class="modal-details">
+
+        <span class="product-category">
+          ${categoryName(product.category)}
+        </span>
+
+        <h2 class="product-name">
+          ${product.name}
+        </h2>
+
+        <div class="rating">
+
+          <span class="stars">
+            ${stars(product.rating)}
+          </span>
+
+          <span class="rating-count">
+            ${product.rating}
+            (${product.reviews.toLocaleString("en-IN")} reviews)
+          </span>
+
+        </div>
+
+        ${viewers >= 12 ? `
+          <div class="modal-live-viewers">
+            <i class="fa-solid fa-eye"></i>
+            ${viewers} people are viewing this product right now
+          </div>
+        ` : ""}
+
+        <div class="modal-price">
+          ${formatPrice(product.price)}
+        </div>
+
+        <div class="price-row">
+
+          <span class="old-price">
+            ${formatPrice(product.oldPrice)}
+          </span>
+
+          <strong style="color:#e53935">
+            ${product.discount}% OFF
+          </strong>
+
+        </div>
+
+        <p class="modal-description">
+          ${product.description}
+        </p>
+
+        ${stock !== undefined && stock <= 15 ? `
+          <div style="margin-bottom:14px">${getStockBadge(id)}</div>
+        ` : ""}
+
+        <div class="modal-stock">
+          <i class="fa-solid fa-circle-check"></i>
+          In Stock
+        </div>
+
+        <button
+          class="primary-btn"
+          data-add-cart="${product.id}"
+        >
+          <i class="fa-solid fa-cart-plus"></i>
+          Add to Cart
+        </button>
+
+      </div>
+
+    </div>
+
+  `;
+
+  modalOverlay.classList.add("active");
+
+  document.body.classList.add("modal-open");
+
+}
+
+
+function closeProductModal() {
+
+  if (modalOverlay) {
+    modalOverlay.classList.remove("active");
+  }
+
+  document.body.classList.remove("modal-open");
+
+}
+
+
+document.addEventListener(
+  "click",
+  event => {
+
+    const element =
+      event.target.closest("[data-product]");
+
+    if (!element) return;
+
+    if (
+      event.target.closest("[data-wishlist]")
+    ) {
+      return;
+    }
+
+    openProductModal(
+      Number(element.dataset.product)
+    );
+
+  }
+);
+
+
+const modalClose =
+  document.getElementById("modalClose");
+
+if (modalClose) {
+  modalClose.addEventListener(
+    "click",
+    closeProductModal
+  );
+}
+
+
+if (modalOverlay) {
+  modalOverlay.addEventListener(
+    "click",
+    event => {
+
+      if (event.target === modalOverlay) {
+        closeProductModal();
+      }
+
+    }
+  );
+}
+
+
+/* ================= CATEGORY EVENTS ================= */
+
+document.addEventListener(
+  "click",
+  event => {
+
+    const button =
+      event.target.closest("[data-category]");
+
+    if (!button) return;
+
+    const category =
+      button.dataset.category;
+
+    if (
+      category === "all" ||
+      products.some(
+        product =>
+          product.category === category
+      )
+    ) {
+      setCategory(category);
+    }
+
+  }
+);
+
+
+/* ================= SIDEBAR ================= */
+
+function openSidebar() {
+
+  if (sidebar) {
+    sidebar.classList.add("active");
+  }
+
+  if (overlay) {
+    overlay.classList.add("active");
+  }
+
+  document.body.classList.add("drawer-open");
+
+}
+
+
+function closeSidebar() {
+
+  if (sidebar) {
+    sidebar.classList.remove("active");
+  }
+
+  if (overlay) {
+    overlay.classList.remove("active");
+  }
+
+  document.body.classList.remove("drawer-open");
+
+}
+
+
+const menuBtn =
+  document.getElementById("menuBtn");
+
+const closeSidebarBtn =
+  document.getElementById("closeSidebar");
+
+if (menuBtn) {
+  menuBtn.addEventListener(
+    "click",
+    openSidebar
+  );
+}
+
+if (closeSidebarBtn) {
+  closeSidebarBtn.addEventListener(
+    "click",
+    closeSidebar
+  );
+}
+
+if (overlay) {
+  overlay.addEventListener(
+    "click",
+    closeSidebar
+  );
+}
+
+
+/* ================= MODERN AD SLIDER ================= */
+
+const adSlides =
+  document.querySelectorAll(".ad-slide");
+
+const adDots =
+  document.querySelectorAll(".ad-dots span");
+
+
+function showAd(index) {
+
+  if (!adSlides.length) return;
+
+  adIndex =
+    (index + adSlides.length) %
+    adSlides.length;
+
+  adSlides.forEach(
+    (slide, i) => {
+
+      slide.classList.toggle(
+        "active",
+        i === adIndex
+      );
+
+    }
+  );
+
+  adDots.forEach(
+    (dot, i) => {
+
+      dot.classList.toggle(
+        "active",
+        i === adIndex
+      );
+
+    }
+  );
+
+}
+
+
+function nextAd() {
+  showAd(adIndex + 1);
+}
+
+
+function previousAd() {
+  showAd(adIndex - 1);
+}
+
+
+function startAdSlider() {
+
+  if (!adSlides.length) return;
+
+  clearInterval(adTimer);
+
+  /* AUTO CHANGE EVERY 3 SECONDS */
+  adTimer =
+    setInterval(
+      nextAd,
+      3000
+    );
+
+}
+
+
+const adNext =
+  document.getElementById("adNext");
+
+const adPrev =
+  document.getElementById("adPrev");
+
+if (adNext) {
+  adNext.addEventListener(
+    "click",
+    () => {
+
+      nextAd();
+      startAdSlider();
+
+    }
+  );
+}
+
+if (adPrev) {
+  adPrev.addEventListener(
+    "click",
+    () => {
+
+      previousAd();
+      startAdSlider();
+
+    }
+  );
+}
+
+
+adDots.forEach(
+  (dot, index) => {
+
+    dot.addEventListener(
+      "click",
+      () => {
+
+        showAd(index);
+        startAdSlider();
+
+      }
+    );
+
+  }
+);
+
+
+/* ================= PAUSE AD ON HOVER ================= */
+
+const heroAd =
+  document.getElementById("heroAd");
+
+if (heroAd) {
+
+  heroAd.addEventListener(
+    "mouseenter",
+    () => clearInterval(adTimer)
+  );
+
+  heroAd.addEventListener(
+    "mouseleave",
+    startAdSlider
+  );
+
+}
+
+showAd(0);
+startAdSlider();
+
+
+/* ================= COUNTDOWN ================= */
+
+function updateCountdown() {
+
+  if (dealSeconds <= 0) {
+    dealSeconds = 8 * 60 * 60;
+  }
+
+  const hours =
+    Math.floor(dealSeconds / 3600);
+
+  const minutes =
+    Math.floor(
+      (dealSeconds % 3600) / 60
+    );
+
+  const seconds =
+    dealSeconds % 60;
+
+  const hoursElement =
+    document.getElementById("hours");
+
+  const minutesElement =
+    document.getElementById("minutes");
+
+  const secondsElement =
+    document.getElementById("seconds");
+
+  if (hoursElement) {
+    hoursElement.textContent =
+      String(hours).padStart(2, "0");
+  }
+
+  if (minutesElement) {
+    minutesElement.textContent =
+      String(minutes).padStart(2, "0");
+  }
+
+  if (secondsElement) {
+    secondsElement.textContent =
+      String(seconds).padStart(2, "0");
+  }
+
+  dealSeconds--;
+
+}
+
+
+setInterval(
+  updateCountdown,
+  1000
+);
+
+updateCountdown();
+
+
+/* ================= TOAST ================= */
+
+let toastTimer;
+
+
+function showToast(message) {
+
+  if (!toast || !toastText) return;
+
+  toastText.textContent =
+    message;
+
+  toast.classList.add("active");
+
+  clearTimeout(toastTimer);
+
+  toastTimer =
+    setTimeout(
+      () => {
+
+        toast.classList.remove(
+          "active"
+        );
+
+      },
+      2500
+    );
+
+}
+
+
+/* ================= NOTICE ================= */
+
+const closeNotice =
+  document.getElementById("closeNotice");
+
+if (closeNotice) {
+
+  closeNotice.addEventListener(
+    "click",
+    () => {
+
+      const demoNotice =
+        document.getElementById("demoNotice");
+
+      if (demoNotice) {
+        demoNotice.style.display = "none";
+      }
+
+    }
+  );
+
+}
+
+
+/* ================= LOGIN MODAL ================= */
+
+const loginModalOverlay = document.getElementById("loginModalOverlay");
+const accountBtn = document.getElementById("accountBtn");
+const sidebarAccountBtn = document.getElementById("sidebarAccountBtn");
+const loginModalClose = document.getElementById("loginModalClose");
+const accountGreeting = document.getElementById("accountGreeting");
+const sidebarGreeting = document.getElementById("sidebarGreeting");
+
+function openLoginModal() {
+  if (!loginModalOverlay) return;
+  loginModalOverlay.classList.add("active");
+  document.body.classList.add("modal-open");
+}
+
+function closeLoginModal() {
+  if (!loginModalOverlay) return;
+  loginModalOverlay.classList.remove("active");
+  document.body.classList.remove("modal-open");
+}
+
+function setLoggedInUser(name) {
+  localStorage.setItem("shopnovaUser", name);
+  if (accountGreeting) accountGreeting.textContent = `Hello, ${name}`;
+  if (sidebarGreeting) sidebarGreeting.textContent = `Hello, ${name}`;
+}
+
+const savedUser = localStorage.getItem("shopnovaUser");
+if (savedUser) {
+  setLoggedInUser(savedUser);
+}
+
+if (accountBtn) {
+  accountBtn.addEventListener("click", openLoginModal);
+}
+
+if (sidebarAccountBtn) {
+  sidebarAccountBtn.addEventListener("click", () => {
+    closeSidebar();
+    openLoginModal();
+  });
+}
+
+if (loginModalClose) {
+  loginModalClose.addEventListener("click", closeLoginModal);
+}
+
+if (loginModalOverlay) {
+  loginModalOverlay.addEventListener("click", event => {
+    if (event.target === loginModalOverlay) {
+      closeLoginModal();
+    }
+  });
+}
+
+document.querySelectorAll(".login-tab").forEach(tab => {
+  tab.addEventListener("click", () => {
+
+    document.querySelectorAll(".login-tab").forEach(t => t.classList.remove("active"));
+    tab.classList.add("active");
+
+    const target = tab.dataset.tab;
+
+    document.querySelectorAll(".login-form").forEach(form => {
+      form.classList.toggle("active", form.dataset.form === target);
+    });
+
+  });
+});
+
+const signinForm = document.getElementById("signinForm");
+
+if (signinForm) {
+  signinForm.addEventListener("submit", event => {
+    event.preventDefault();
+
+    const emailField = document.getElementById("signinEmail");
+    const email = emailField ? emailField.value.trim() : "";
+
+    if (!email) {
+      showToast("Please enter your email or mobile number");
+      return;
+    }
+
+    const name = email.includes("@") ? email.split("@")[0] : email;
+
+    setLoggedInUser(name);
+    closeLoginModal();
+    showToast(`Welcome back, ${name}!`);
+    signinForm.reset();
+
+  });
+}
+
+const signupForm = document.getElementById("signupForm");
+
+if (signupForm) {
+  signupForm.addEventListener("submit", event => {
+    event.preventDefault();
+
+    const nameField = document.getElementById("signupName");
+    const name = nameField ? nameField.value.trim() : "";
+
+    if (!name) {
+      showToast("Please enter your name");
+      return;
+    }
+
+    setLoggedInUser(name);
+    closeLoginModal();
+    showToast(`Account created — welcome, ${name}!`);
+    signupForm.reset();
+
+  });
+}
+
+
+/* ================= LOCATION MODAL ================= */
+
+const cities = [
+  "Mumbai", "Delhi", "Bengaluru", "Hyderabad",
+  "Ahmedabad", "Chennai", "Kolkata", "Pune",
+  "Jaipur", "Surat", "Lucknow", "Chandigarh"
+];
+
+const locationModalOverlay = document.getElementById("locationModalOverlay");
+const deliveryBtn = document.getElementById("deliveryBtn");
+const deliveryLocation = document.getElementById("deliveryLocation");
+const locationModalClose = document.getElementById("locationModalClose");
+const locationGrid = document.getElementById("locationGrid");
+const locationSearch = document.getElementById("locationSearch");
+
+function renderLocationGrid(filter = "") {
+
+  if (!locationGrid) return;
+
+  const filtered = cities.filter(city =>
+    city.toLowerCase().includes(filter.toLowerCase())
+  );
+
+  if (filtered.length === 0) {
+    locationGrid.innerHTML = `<div class="location-empty">No matching city found.</div>`;
+    return;
+  }
+
+  locationGrid.innerHTML = filtered.map(city => `
+    <button class="location-item" data-city="${city}">
+      <i class="fa-solid fa-location-dot"></i>
+      ${city}
+    </button>
+  `).join("");
+
+}
+
+function openLocationModal() {
+  if (!locationModalOverlay) return;
+  renderLocationGrid();
+  if (locationSearch) locationSearch.value = "";
+  locationModalOverlay.classList.add("active");
+  document.body.classList.add("modal-open");
+}
+
+function closeLocationModal() {
+  if (!locationModalOverlay) return;
+  locationModalOverlay.classList.remove("active");
+  document.body.classList.remove("modal-open");
+}
+
+const savedLocation = localStorage.getItem("shopnovaLocation");
+if (savedLocation && deliveryLocation) {
+  deliveryLocation.textContent = savedLocation;
+}
+
+if (deliveryBtn) {
+  deliveryBtn.addEventListener("click", openLocationModal);
+}
+
+if (locationModalClose) {
+  locationModalClose.addEventListener("click", closeLocationModal);
+}
+
+if (locationModalOverlay) {
+  locationModalOverlay.addEventListener("click", event => {
+    if (event.target === locationModalOverlay) {
+      closeLocationModal();
+    }
+  });
+}
+
+if (locationSearch) {
+  locationSearch.addEventListener("input", () => {
+    renderLocationGrid(locationSearch.value.trim());
+  });
+}
+
+if (locationGrid) {
+  locationGrid.addEventListener("click", event => {
+
+    const item = event.target.closest("[data-city]");
+
+    if (!item) return;
+
+    const city = item.dataset.city;
+
+    if (deliveryLocation) {
+      deliveryLocation.textContent = city;
+    }
+
+    localStorage.setItem("shopnovaLocation", city);
+
+    closeLocationModal();
+
+    showToast(`Delivery location set to ${city}`);
+
+  });
+}
+
+
+/* ================= CHECKOUT MODAL ================= */
+
+const checkoutBtn = document.getElementById("checkoutBtn");
+const checkoutModalOverlay = document.getElementById("checkoutModalOverlay");
+const checkoutModalClose = document.getElementById("checkoutModalClose");
+const checkoutOrderItems = document.getElementById("checkoutOrderItems");
+const checkoutSubtotal = document.getElementById("checkoutSubtotal");
+const checkoutGrandTotal = document.getElementById("checkoutGrandTotal");
+const checkoutOrderId = document.getElementById("checkoutOrderId");
+
+function goToCheckoutStep(step) {
+
+  document.querySelectorAll(".checkout-panel").forEach(panel => {
+    panel.classList.toggle("active", Number(panel.dataset.panel) === step);
+  });
+
+  document.querySelectorAll(".checkout-step").forEach(stepEl => {
+    const stepNum = Number(stepEl.dataset.step);
+    stepEl.classList.toggle("active", stepNum === step);
+    stepEl.classList.toggle("done", stepNum < step);
+  });
+
+}
+
+function renderCheckoutReview() {
+
+  if (!checkoutOrderItems) return;
+
+  let total = 0;
+
+  checkoutOrderItems.innerHTML = cart.map(item => {
+
+    const product = products.find(p => p.id === item.id);
+
+    if (!product) return "";
+
+    const lineTotal = product.price * item.quantity;
+    total += lineTotal;
+
+    return `
+      <div class="checkout-order-item">
+        <img src="${product.image}" alt="${product.name}">
+        <div class="checkout-order-item-info">
+          <strong>${product.name}</strong>
+          <span>Qty: ${item.quantity}</span>
+        </div>
+        <div class="checkout-order-item-price">${formatPrice(lineTotal)}</div>
+      </div>
+    `;
+
+  }).join("");
+
+  if (checkoutSubtotal) checkoutSubtotal.textContent = formatPrice(total);
+  if (checkoutGrandTotal) checkoutGrandTotal.textContent = formatPrice(total);
+
+}
+
+function openCheckoutModal() {
+  if (!checkoutModalOverlay) return;
+  goToCheckoutStep(1);
+  checkoutModalOverlay.classList.add("active");
+  document.body.classList.add("modal-open");
+  closeCart();
+}
+
+function closeCheckoutModal() {
+  if (!checkoutModalOverlay) return;
+  checkoutModalOverlay.classList.remove("active");
+  document.body.classList.remove("modal-open");
+}
+
+if (checkoutBtn) {
+  checkoutBtn.addEventListener("click", () => {
+
+    if (cart.length === 0) {
+      showToast("Your cart is empty");
+      return;
+    }
+
+    openCheckoutModal();
+
+  });
+}
+
+if (checkoutModalClose) {
+  checkoutModalClose.addEventListener("click", closeCheckoutModal);
+}
+
+if (checkoutModalOverlay) {
+  checkoutModalOverlay.addEventListener("click", event => {
+    if (event.target === checkoutModalOverlay) {
+      closeCheckoutModal();
+    }
+  });
+}
+
+const toStep2 = document.getElementById("toStep2");
+
+if (toStep2) {
+  toStep2.addEventListener("click", () => {
+
+    const name = document.getElementById("checkoutName");
+    const phone = document.getElementById("checkoutPhone");
+    const address = document.getElementById("checkoutAddress");
+    const city = document.getElementById("checkoutCity");
+    const pincode = document.getElementById("checkoutPincode");
+
+    if (
+      !name.value.trim() ||
+      !phone.value.trim() ||
+      !address.value.trim() ||
+      !city.value.trim() ||
+      !pincode.value.trim()
+    ) {
+      showToast("Please fill in all address fields");
+      return;
+    }
+
+    renderCheckoutReview();
+    goToCheckoutStep(2);
+
+  });
+}
+
+const toStep1Back = document.getElementById("toStep1Back");
+
+if (toStep1Back) {
+  toStep1Back.addEventListener("click", () => goToCheckoutStep(1));
+}
+
+const placeOrderBtn = document.getElementById("placeOrderBtn");
+
+if (placeOrderBtn) {
+  placeOrderBtn.addEventListener("click", () => {
+
+    const orderId = "SN" + Math.floor(10000 + Math.random() * 89999);
+
+    if (checkoutOrderId) {
+      checkoutOrderId.textContent = `#${orderId}`;
+    }
+
+    cart = [];
+    saveCart();
+    renderCart();
+
+    goToCheckoutStep(3);
+
+  });
+}
+
+const checkoutDoneBtn = document.getElementById("checkoutDoneBtn");
+
+if (checkoutDoneBtn) {
+  checkoutDoneBtn.addEventListener("click", () => {
+    closeCheckoutModal();
+    showToast("Thanks for shopping with ShopNova!");
+  });
+}
+
+
+/* ================= NEWSLETTER ================= */
+
+const subscribeBtn =
+  document.getElementById("subscribeBtn");
+
+if (subscribeBtn) {
+
+  subscribeBtn.addEventListener(
+    "click",
+    () => {
+
+      const newsletterInput =
+        document.getElementById(
+          "newsletterEmail"
+        );
+
+      if (!newsletterInput) return;
+
+      const email =
+        newsletterInput.value.trim();
+
+      if (!email) {
+
+        showToast(
+          "Please enter your email"
+        );
+
+        return;
+
+      }
+
+      if (
+        !email.includes("@") ||
+        !email.includes(".")
+      ) {
+
+        showToast(
+          "Please enter a valid email"
+        );
+
+        return;
+
+      }
+
+      showToast(
+        "Thanks! You're subscribed 🎉"
+      );
+
+      newsletterInput.value = "";
+
+    }
+  );
+
+}
+
+
+/* ================= BACK TO TOP ================= */
+
+const backTop =
+  document.getElementById("backTop");
+
+
+if (backTop) {
+
+  window.addEventListener(
+    "scroll",
+    () => {
+
+      backTop.classList.toggle(
+        "active",
+        window.scrollY > 500
+      );
+
+    }
+  );
+
+  backTop.addEventListener(
+    "click",
+    () => {
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    }
+  );
+
+}
+
+
+/* ================= LOGO ================= */
+
+const logoBtn =
+  document.getElementById("logoBtn");
+
+if (logoBtn) {
+
+  logoBtn.addEventListener(
+    "click",
+    event => {
+
+      event.preventDefault();
+
+      currentCategory = "all";
+      currentSearch = "";
+
+      if (searchInput) {
+        searchInput.value = "";
+      }
+
+      if (productTitle) {
+        productTitle.textContent =
+          "Popular Products";
+      }
+
+      renderProducts();
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    }
+  );
+
+}
+
+
+/* ================= ESC KEY ================= */
+
+document.addEventListener(
+  "keydown",
+  event => {
+
+    if (event.key !== "Escape") return;
+
+    closeCart();
+    closeSidebar();
+    closeProductModal();
+    closeLoginModal();
+    closeLocationModal();
+    closeCheckoutModal();
+
+  }
+);
+
+
+/* ================= SCROLL REVEAL ================= */
+
+function initReveal() {
+
+  const elements =
+    document.querySelectorAll(
+      ".reveal:not(.visible)"
+    );
+
+  if (!elements.length) return;
+
+  const observer =
+    new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add(
+              "visible"
+            );
+
+            observer.unobserve(
+              entry.target
+            );
+
+          }
+
+        });
+
+      },
+      {
+        threshold: .12
+      }
+    );
+
+  elements.forEach(
+    element =>
+      observer.observe(element)
+  );
+
+}
+
+
+/* ================= INITIAL ================= */
+
+const year =
+  document.getElementById("year");
+
+if (year) {
+  year.textContent =
+    new Date().getFullYear();
+}
+
+
+/* RENDER ALL SECTIONS */
+
+renderProducts();
+renderDeals();
+renderMenProducts();
+renderWomenProducts();
+renderCart();
+
+initReveal();
+
+startLiveActivityLoop();

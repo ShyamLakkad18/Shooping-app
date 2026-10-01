@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ShopNova - Modern Online Shopping</title>
+
+  <meta
+    name="description"
+    content="ShopNova modern e-commerce shopping website."
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= DEMO NOTICE ================= -->
+
+<div class="demo-notice" id="demoNotice">
+  <span>
+    <i class="fa-solid fa-circle-info"></i>
+    Demo e-commerce website — no real payments or orders are processed.
+  </span>
+
+  <button id="closeNotice">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+</div>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+  <div class="top-header">
+
+    <div class="logo">
+      <a href="#" id="logoBtn">
+        <span class="logo-icon">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </span>
+        <span>Shop<span>Nova</span></span>
+      </a>
+    </div>
+
+
+    <button class="delivery" id="deliveryBtn">
+      <i class="fa-solid fa-location-dot"></i>
+
+      <div>
+        <small>Deliver to</small>
+        <strong id="deliveryLocation">India</strong>
+      </div>
+    </button>
+
+
+    <div class="search-box">
+
+      <select id="searchCategory">
+        <option value="all">All</option>
+        <option value="fashion">Fashion</option>
+        <option value="electronics">Electronics</option>
+        <option value="shoes">Shoes</option>
+        <option value="beauty">Beauty</option>
+        <option value="home">Home</option>
+        <option value="gaming">Gaming</option>
+        <option value="books">Books</option>
+        <option value="innerwear">Innerwear</option>
+      </select>
+
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="Search products..."
+      >
+
+      <button id="searchBtn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+
+    </div>
+
+
+    <div class="header-actions">
+
+      <button class="header-action language">
+        <span>🇮🇳</span>
+        <small>EN</small>
+      </button>
+
+      <button class="header-action account" id="accountBtn">
+        <small id="accountGreeting">Hello, Sign in</small>
+        <strong>Account & Lists</strong>
+      </button>
+
+      <button class="header-action orders">
+        <small>Returns</small>
+        <strong>& Orders</strong>
+      </button>
+
+      <button class="cart-button" id="cartBtn">
+
+        <span class="cart-icon">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <b id="cartCount">0</b>
+        </span>
+
+        <strong>Cart</strong>
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <nav class="nav-bar">
+
+    <button class="menu-btn" id="menuBtn">
+      <i class="fa-solid fa-bars"></i>
+      All
+    </button>
+
+    <a href="#deals">Today's Deals</a>
+    <a href="#products">Best Sellers</a>
+    <a href="#categories">Categories</a>
+    <a href="#men">Men</a>
+    <a href="#women">Women</a>
+    <a href="#products">Fashion</a>
+    <a href="#products">Electronics</a>
+    <a href="#products">Home</a>
+    <a href="#products">Beauty</a>
+    <a href="#products">Gaming</a>
+    <a href="#products">Innerwear</a>
+
+  </nav>
+
+</header>
+
+
+<!-- ================= SIDEBAR ================= -->
+
+<div class="overlay" id="overlay"></div>
+
+<aside class="sidebar" id="sidebar">
+
+  <div class="sidebar-header">
+
+    <button class="sidebar-account" id="sidebarAccountBtn">
+      <i class="fa-solid fa-user"></i>
+      <span id="sidebarGreeting">Hello, Sign in</span>
+    </button>
+
+    <button id="closeSidebar">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+  </div>
+
+
+  <div class="sidebar-content">
+
+    <h3>Shop By Category</h3>
+
+    <button data-category="all">All Products</button>
+    <button data-category="fashion">Fashion</button>
+    <button data-category="electronics">Electronics</button>
+    <button data-category="shoes">Shoes</button>
+    <button data-category="beauty">Beauty</button>
+    <button data-category="home">Home</button>
+    <button data-category="gaming">Gaming</button>
+    <button data-category="books">Books</button>
+    <button data-category="innerwear">Innerwear & Loungewear</button>
+
+    <hr>
+
+    <h3>Customer Service</h3>
+
+    <button id="sidebarOrders">My Orders</button>
+    <button id="sidebarWishlist">Wishlist</button>
+    <button id="sidebarHelp">Help Center</button>
+
+  </div>
+
+</aside>
+
+
+<main>
+
+<!-- ================= MODERN HERO AD ================= -->
+
+<section class="hero-ad" id="heroAd">
+
+  <div class="ad-slider" id="adSlider">
+
+
+    <!-- AD 1 -->
+
+    <article class="ad-slide active">
+
+      <div class="ad-background"></div>
+
+      <div class="ad-content">
+
+        <span class="ad-label">
+          <i class="fa-solid fa-bolt"></i>
+          LIMITED TIME OFFER
+        </span>
+
+        <h1>
+          Premium Tech.<br>
+          Better Prices.
+        </h1>
+
+        <p>
+          Upgrade your everyday setup with premium headphones,
+          smartwatches and gadgets.
+        </p>
+
+        <div class="ad-actions">
+
+          <button
+            class="primary-btn"
+            data-category="electronics"
+          >
+            Shop Electronics
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+          <span class="ad-saving">
+            Up to <strong>50% OFF</strong>
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="ad-products">
+
+        <div class="ad-product-card ad-product-main">
+
+          <span class="floating-discount">50% OFF</span>
+
+          <img
+            src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=90"
+            alt="Wireless headphones"
+          >
+
+          <div class="ad-product-info">
+            <strong>Wireless Headphones</strong>
+            <span>₹2,499</span>
+          </div>
+
+        </div>
+
+
+        <div class="ad-product-card ad-small-card card-one">
+
+          <img
+            src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=600&q=90"
+            alt="Smart watch"
+          >
+
+          <strong>Smart Watch</strong>
+          <span>₹2,999</span>
+
+        </div>
+
+
+        <div class="ad-product-card ad-small-card card-two">
+
+          <img
+            src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=600&q=90"
+            alt="Bluetooth speaker"
+          >
+
+          <strong>Bluetooth Speaker</strong>
+          <span>₹1,499</span>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- AD 2 -->
+
+    <article class="ad-slide">
+
+      <div class="ad-background fashion-ad-bg"></div>
+
+      <div class="ad-content">
+
+        <span class="ad-label pink">
+          <i class="fa-solid fa-shirt"></i>
+          NEW FASHION DROP
+        </span>
+
+        <h1>
+          Fresh Looks.<br>
+          Fresh You.
+        </h1>
+
+        <p>
+          Discover stylish dresses, jackets, bags and everyday
+          fashion essentials.
+        </p>
+
+        <div class="ad-actions">
+
+          <button
+            class="primary-btn"
+            data-category="fashion"
+          >
+            Shop Fashion
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+          <span class="ad-saving">
+            Up to <strong>50% OFF</strong>
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="ad-products fashion-products">
+
+        <div class="ad-product-card ad-product-main">
+
+          <span class="floating-discount">48% OFF</span>
+
+          <img
+            src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=900&q=90"
+            alt="Women's summer dress"
+          >
+
+          <div class="ad-product-info">
+            <strong>Summer Dress</strong>
+            <span>₹1,299</span>
+          </div>
+
+        </div>
+
+
+        <div class="ad-product-card ad-small-card card-one">
+
+          <img
+            src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=600&q=90"
+            alt="Denim jacket"
+          >
+
+          <strong>Denim Jacket</strong>
+          <span>₹1,499</span>
+
+        </div>
+
+
+        <div class="ad-product-card ad-small-card card-two">
+
+          <img
+            src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=90"
+            alt="Fashion handbag"
+          >
+
+          <strong>Fashion Bag</strong>
+          <span>₹999</span>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- AD 3 -->
+
+    <article class="ad-slide">
+
+      <div class="ad-background gaming-ad-bg"></div>
+
+      <div class="ad-content">
+
+        <span class="ad-label orange">
+          <i class="fa-solid fa-gamepad"></i>
+          GAMING SALE
+        </span>
+
+        <h1>
+          Level Up<br>
+          Your Game.
+        </h1>
+
+        <p>
+          Gaming keyboards, controllers and headsets at
+          special launch prices.
+        </p>
+
+        <div class="ad-actions">
+
+          <button
+            class="primary-btn"
+            data-category="gaming"
+          >
+            Shop Gaming
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+          <span class="ad-saving">
+            Save up to <strong>50%</strong>
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="ad-products gaming-products">
+
+        <div class="ad-product-card ad-product-main">
+
+          <span class="floating-discount">50% OFF</span>
+
+          <img
+            src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=900&q=90"
+            alt="Gaming keyboard"
+          >
+
+          <div class="ad-product-info">
+            <strong>RGB Gaming Keyboard</strong>
+            <span>₹1,999</span>
+          </div>
+
+        </div>
+
+
+        <div class="ad-product-card ad-small-card card-one">
+
+          <img
+            src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?auto=format&fit=crop&w=600&q=90"
+            alt="Gaming controller"
+          >
+
+          <strong>Controller</strong>
+          <span>₹2,299</span>
+
+        </div>
+
+
+        <div class="ad-product-card ad-small-card card-two">
+
+          <img
+            src="https://images.unsplash.com/photo-1599669454699-248893623440?auto=format&fit=crop&w=600&q=90"
+            alt="Gaming headset"
+          >
+
+          <strong>Gaming Headset</strong>
+          <span>₹1,699</span>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- AD 4 -->
+
+    <article class="ad-slide">
+
+      <div class="ad-background beauty-ad-bg"></div>
+
+      <div class="ad-content">
+
+        <span class="ad-label rose">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          BEAUTY BONANZA
+        </span>
+
+        <h1>
+          Glow Up.<br>
+          Naturally.
+        </h1>
+
+        <p>
+          Skincare sets, perfumes and makeup essentials for
+          your everyday glow.
+        </p>
+
+        <div class="ad-actions">
+
+          <button
+            class="primary-btn"
+            data-category="beauty"
+          >
+            Shop Beauty
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+          <span class="ad-saving">
+            Up to <strong>44% OFF</strong>
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="ad-products beauty-products">
+
+        <div class="ad-product-card ad-product-main">
+
+          <span class="floating-discount">44% OFF</span>
+
+          <img
+            src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=900&q=90"
+            alt="Hydrating skincare set"
+          >
+
+          <div class="ad-product-info">
+            <strong>Hydrating Skincare Set</strong>
+            <span>₹899</span>
+          </div>
+
+        </div>
+
+
+        <div class="ad-product-card ad-small-card card-one">
+
+          <img
+            src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=600&q=90"
+            alt="Luxury perfume"
+          >
+
+          <strong>Luxury Perfume</strong>
+          <span>₹1,799</span>
+
+        </div>
+
+
+        <div class="ad-product-card ad-small-card card-two">
+
+          <img
+            src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=90"
+            alt="Makeup kit"
+          >
+
+          <strong>Makeup Kit</strong>
+          <span>₹1,299</span>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- AD 5 -->
+
+    <article class="ad-slide">
+
+      <div class="ad-background home-ad-bg"></div>
+
+      <div class="ad-content">
+
+        <span class="ad-label teal">
+          <i class="fa-solid fa-house"></i>
+          HOME REFRESH
+        </span>
+
+        <h1>
+          Cozy Spaces.<br>
+          Better Living.
+        </h1>
+
+        <p>
+          Decor, lighting and furniture pieces to refresh
+          every room in your home.
+        </p>
+
+        <div class="ad-actions">
+
+          <button
+            class="primary-btn"
+            data-category="home"
+          >
+            Shop Home
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+          <span class="ad-saving">
+            Up to <strong>47% OFF</strong>
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="ad-products home-products">
+
+        <div class="ad-product-card ad-product-main">
+
+          <span class="floating-discount">42% OFF</span>
+
+          <img
+            src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=900&q=90"
+            alt="Minimalist home chair"
+          >
+
+          <div class="ad-product-info">
+            <strong>Minimalist Chair</strong>
+            <span>₹3,499</span>
+          </div>
+
+        </div>
+
+
+        <div class="ad-product-card ad-small-card card-one">
+
+          <img
+            src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=90"
+            alt="Decorative lamp"
+          >
+
+          <strong>Decorative Lamp</strong>
+          <span>₹799</span>
+
+        </div>
+
+
+        <div class="ad-product-card ad-small-card card-two">
+
+          <img
+            src="https://images.unsplash.com/photo-1532372320572-cda25653a26d?auto=format&fit=crop&w=600&q=90"
+            alt="Modern coffee table"
+          >
+
+          <strong>Coffee Table</strong>
+          <span>₹4,999</span>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- AD 6 -->
+
+    <article class="ad-slide">
+
+      <div class="ad-background shoes-ad-bg"></div>
+
+      <div class="ad-content">
+
+        <span class="ad-label violet">
+          <i class="fa-solid fa-shoe-prints"></i>
+          STEP UP SALE
+        </span>
+
+        <h1>
+          Step Into<br>
+          Comfort.
+        </h1>
+
+        <p>
+          Running shoes, sneakers and heels crafted for
+          all-day comfort and style.
+        </p>
+
+        <div class="ad-actions">
+
+          <button
+            class="primary-btn"
+            data-category="shoes"
+          >
+            Shop Shoes
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+          <span class="ad-saving">
+            Up to <strong>50% OFF</strong>
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="ad-products shoes-products">
+
+        <div class="ad-product-card ad-product-main">
+
+          <span class="floating-discount">49% OFF</span>
+
+          <img
+            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=90"
+            alt="Running sneakers"
+          >
+
+          <div class="ad-product-info">
+            <strong>Running Sneakers</strong>
+            <span>₹1,799</span>
+          </div>
+
+        </div>
+
+
+        <div class="ad-product-card ad-small-card card-one">
+
+          <img
+            src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=600&q=90"
+            alt="White sneakers"
+          >
+
+          <strong>White Sneakers</strong>
+          <span>₹1,999</span>
+
+        </div>
+
+
+        <div class="ad-product-card ad-small-card card-two">
+
+          <img
+            src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=90"
+            alt="Elegant heels"
+          >
+
+          <strong>Elegant Heels</strong>
+          <span>₹1,799</span>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- AD 7 -->
+
+    <article class="ad-slide">
+
+      <div class="ad-background books-ad-bg"></div>
+
+      <div class="ad-content">
+
+        <span class="ad-label slate">
+          <i class="fa-solid fa-book"></i>
+          READER'S CORNER
+        </span>
+
+        <h1>
+          Read More.<br>
+          Learn More.
+        </h1>
+
+        <p>
+          Handpicked books on lifestyle, technology and
+          everyday learning.
+        </p>
+
+        <div class="ad-actions">
+
+          <button
+            class="primary-btn"
+            data-category="books"
+          >
+            Shop Books
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+          <span class="ad-saving">
+            Up to <strong>38% OFF</strong>
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="ad-products books-products">
+
+        <div class="ad-product-card ad-product-main">
+
+          <span class="floating-discount">38% OFF</span>
+
+          <img
+            src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=900&q=90"
+            alt="The Art of Modern Living book"
+          >
+
+          <div class="ad-product-info">
+            <strong>Modern Living</strong>
+            <span>₹499</span>
+          </div>
+
+        </div>
+
+
+        <div class="ad-product-card ad-small-card card-one">
+
+          <img
+            src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=600&q=90"
+            alt="Technology guide book"
+          >
+
+          <strong>Tech Guide</strong>
+          <span>₹699</span>
+
+        </div>
+
+
+        <div class="ad-product-card ad-small-card card-two">
+
+          <img
+            src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=90"
+            alt="Stack of books"
+          >
+
+          <strong>Bestseller Pack</strong>
+          <span>₹1,199</span>
+
+        </div>
+
+      </div>
+
+    </article>
+
+  </div>
+
+
+  <button class="ad-arrow ad-prev" id="adPrev">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+
+  <button class="ad-arrow ad-next" id="adNext">
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>
+
+
+  <div class="ad-dots" id="adDots">
+    <span class="active"></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="category-section reveal" id="categories">
+
+  <div class="section-heading">
+
+    <div>
+      <span class="section-label">EXPLORE</span>
+      <h2>Shop by Category</h2>
+      <p class="section-subtext">Curated picks across every corner of ShopNova.</p>
+    </div>
+
+    <button class="view-all" data-category="all">
+      View All
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+
+  </div>
+
+
+  <div class="category-grid">
+
+    <button class="category-card" data-category="fashion">
+      <div class="category-image fashion-bg">
+        <span class="category-blob"></span>
+        <i class="fa-solid fa-shirt"></i>
+      </div>
+      <strong>Fashion</strong>
+      <span>Clothing & Accessories</span>
+      <em class="category-cta">Shop now <i class="fa-solid fa-arrow-right"></i></em>
+    </button>
+
+
+    <button class="category-card" data-category="electronics">
+      <div class="category-image electronics-bg">
+        <span class="category-blob"></span>
+        <i class="fa-solid fa-laptop"></i>
+      </div>
+      <strong>Electronics</strong>
+      <span>Tech & Gadgets</span>
+      <em class="category-cta">Shop now <i class="fa-solid fa-arrow-right"></i></em>
+    </button>
+
+
+    <button class="category-card" data-category="shoes">
+      <div class="category-image shoes-bg">
+        <span class="category-blob"></span>
+        <i class="fa-solid fa-shoe-prints"></i>
+      </div>
+      <strong>Shoes</strong>
+      <span>Sneakers & More</span>
+      <em class="category-cta">Shop now <i class="fa-solid fa-arrow-right"></i></em>
+    </button>
+
+
+    <button class="category-card" data-category="beauty">
+      <div class="category-image beauty-bg">
+        <span class="category-blob"></span>
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+      </div>
+      <strong>Beauty</strong>
+      <span>Makeup & Skincare</span>
+      <em class="category-cta">Shop now <i class="fa-solid fa-arrow-right"></i></em>
+    </button>
+
+
+    <button class="category-card" data-category="home">
+      <div class="category-image home-bg">
+        <span class="category-blob"></span>
+        <i class="fa-solid fa-house"></i>
+      </div>
+      <strong>Home</strong>
+      <span>Decor & Furniture</span>
+      <em class="category-cta">Shop now <i class="fa-solid fa-arrow-right"></i></em>
+    </button>
+
+
+    <button class="category-card" data-category="gaming">
+      <div class="category-image gaming-bg">
+        <span class="category-blob"></span>
+        <i class="fa-solid fa-gamepad"></i>
+      </div>
+      <strong>Gaming</strong>
+      <span>Games & Accessories</span>
+      <em class="category-cta">Shop now <i class="fa-solid fa-arrow-right"></i></em>
+    </button>
+
+
+    <button class="category-card" data-category="books">
+      <div class="category-image books-bg">
+        <span class="category-blob"></span>
+        <i class="fa-solid fa-book"></i>
+      </div>
+      <strong>Books</strong>
+      <span>Books & Education</span>
+      <em class="category-cta">Shop now <i class="fa-solid fa-arrow-right"></i></em>
+    </button>
+
+
+    <button class="category-card" data-category="innerwear">
+      <div class="category-image innerwear-bg">
+        <span class="category-blob"></span>
+        <i class="fa-solid fa-vest"></i>
+      </div>
+      <strong>Innerwear</strong>
+      <span>Loungewear & Basics</span>
+      <em class="category-cta">Shop now <i class="fa-solid fa-arrow-right"></i></em>
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ================= DEALS ================= -->
+
+<section class="deals-section reveal" id="deals">
+
+  <div class="deals-top">
+
+    <div>
+      <span class="section-label">LIMITED TIME</span>
+      <h2>🔥 Today's Best Deals</h2>
+    </div>
+
+    <div class="countdown">
+
+      <span>Ends in</span>
+
+      <strong id="hours">08</strong>
+      <b>:</b>
+      <strong id="minutes">42</strong>
+      <b>:</b>
+      <strong id="seconds">19</strong>
+
+    </div>
+
+  </div>
+
+
+  <div class="deal-products" id="dealProducts"></div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section class="products-section reveal" id="products">
+
+  <div class="products-heading">
+
+    <div>
+      <span class="section-label">OUR COLLECTION</span>
+      <h2 id="productTitle">Popular Products</h2>
+    </div>
+
+
+    <div class="filters">
+
+      <button class="filter-btn active" data-category="all">
+        All
+      </button>
+
+      <button class="filter-btn" data-category="fashion">
+        Fashion
+      </button>
+
+      <button class="filter-btn" data-category="electronics">
+        Electronics
+      </button>
+
+      <button class="filter-btn" data-category="shoes">
+        Shoes
+      </button>
+
+      <button class="filter-btn" data-category="beauty">
+        Beauty
+      </button>
+
+      <button class="filter-btn" data-category="home">
+        Home
+      </button>
+
+      <button class="filter-btn" data-category="gaming">
+        Gaming
+      </button>
+
+      <button class="filter-btn" data-category="books">
+        Books
+      </button>
+
+      <button class="filter-btn" data-category="innerwear">
+        Innerwear
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="product-grid" id="productGrid"></div>
+
+
+  <div class="no-results" id="noResults">
+
+    <i class="fa-solid fa-box-open"></i>
+
+    <h3>No products found</h3>
+
+    <p>Try another search or category.</p>
+
+    <button class="primary-btn" data-category="all">
+      Show All Products
+    </button>
+
+  </div>
+
+</section>
+
+
+
+
+<!-- ================= MEN & WOMEN FASHION ================= -->
+
+<section class="gender-fashion reveal" id="men">
+  <div class="gender-section-heading">
+    <div>
+      <span class="section-label">STYLE FOR HIM</span>
+      <h2>Men's Fashion</h2>
+      <p>Fresh looks for work, weekends and every occasion.</p>
+    </div>
+    <button class="view-all gender-view" data-gender="men">View All</button>
+  </div>
+  <div class="gender-banner men-banner">
+    <div><span>MEN'S NEW ARRIVALS</span><h3>Own Your Everyday Style.</h3><p>Premium essentials with up to 50% OFF.</p><button class="gender-shop-btn" data-gender="men">Shop Men <i class="fa-solid fa-arrow-right"></i></button></div>
+  </div>
+  <div class="product-grid gender-product-grid" id="menProductGrid"></div>
+</section>
+
+<section class="gender-fashion reveal" id="women">
+  <div class="gender-section-heading">
+    <div>
+      <span class="section-label">STYLE FOR HER</span>
+      <h2>Women's Fashion</h2>
+      <p>New trends, timeless classics and beautiful everyday pieces.</p>
+    </div>
+    <button class="view-all gender-view" data-gender="women">View All</button>
+  </div>
+  <div class="gender-banner women-banner">
+    <div><span>WOMEN'S NEW COLLECTION</span><h3>Wear What Makes You Shine.</h3><p>Discover statement pieces with up to 50% OFF.</p><button class="gender-shop-btn" data-gender="women">Shop Women <i class="fa-solid fa-arrow-right"></i></button></div>
+  </div>
+  <div class="product-grid gender-product-grid" id="womenProductGrid"></div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features reveal">
+
+  <div class="feature">
+    <div class="feature-icon">
+      <i class="fa-solid fa-truck-fast"></i>
+    </div>
+
+    <div>
+      <strong>Fast Delivery</strong>
+      <span>Quick delivery across India</span>
+    </div>
+  </div>
+
+
+  <div class="feature">
+    <div class="feature-icon">
+      <i class="fa-solid fa-shield-halved"></i>
+    </div>
+
+    <div>
+      <strong>Secure Shopping</strong>
+      <span>Your data stays protected</span>
+    </div>
+  </div>
+
+
+  <div class="feature">
+    <div class="feature-icon">
+      <i class="fa-solid fa-rotate-left"></i>
+    </div>
+
+    <div>
+      <strong>Easy Returns</strong>
+      <span>Simple and hassle-free returns</span>
+    </div>
+  </div>
+
+
+  <div class="feature">
+    <div class="feature-icon">
+      <i class="fa-solid fa-headset"></i>
+    </div>
+
+    <div>
+      <strong>24/7 Support</strong>
+      <span>We're here to help</span>
+    </div>
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= CART ================= -->
+
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<aside class="cart-drawer" id="cartDrawer">
+
+  <div class="cart-header">
+
+    <div>
+      <i class="fa-solid fa-cart-shopping"></i>
+      <h2>Your Cart</h2>
+    </div>
+
+    <button id="closeCart">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+  </div>
+
+
+  <div class="cart-items" id="cartItems">
+
+    <div class="empty-cart">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <h3>Your cart is empty</h3>
+      <p>Add products to see them here.</p>
+    </div>
+
+  </div>
+
+
+  <div class="cart-footer">
+
+    <div class="cart-subtotal">
+      <span>Subtotal:</span>
+      <strong id="cartTotal">₹0</strong>
+    </div>
+
+    <button class="checkout-btn" id="checkoutBtn">
+      Proceed to Checkout
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+
+    <small>
+      Demo checkout. No real payment will be processed.
+    </small>
+
+  </div>
+
+</aside>
+
+
+<!-- ================= MODAL ================= -->
+
+<div class="product-modal-overlay" id="productModalOverlay">
+
+  <div class="product-modal">
+
+    <button class="modal-close" id="modalClose">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div id="modalContent"></div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= LOGIN MODAL ================= -->
+
+<div class="login-modal-overlay" id="loginModalOverlay">
+
+  <div class="login-modal">
+
+    <button class="modal-close" id="loginModalClose">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div class="login-art">
+      <div class="login-art-glow"></div>
+      <i class="fa-solid fa-bag-shopping login-art-icon"></i>
+      <h3>Welcome to ShopNova</h3>
+      <p>Sign in for faster checkout, order tracking and personalised deals.</p>
+    </div>
+
+    <div class="login-form-wrap">
+
+      <div class="login-tabs">
+        <button class="login-tab active" data-tab="signin">Sign In</button>
+        <button class="login-tab" data-tab="signup">Create Account</button>
+      </div>
+
+      <form class="login-form active" id="signinForm" data-form="signin">
+
+        <label class="login-field">
+          <span>Email or Mobile Number</span>
+          <input type="text" id="signinEmail" placeholder="you@example.com" required>
+        </label>
+
+        <label class="login-field">
+          <span>Password</span>
+          <input type="password" id="signinPassword" placeholder="••••••••" required>
+        </label>
+
+        <button type="submit" class="login-submit">
+          Sign In
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <p class="login-note">Demo login — no real account is created or verified.</p>
+
+      </form>
+
+      <form class="login-form" id="signupForm" data-form="signup">
+
+        <label class="login-field">
+          <span>Full Name</span>
+          <input type="text" id="signupName" placeholder="Your name" required>
+        </label>
+
+        <label class="login-field">
+          <span>Email</span>
+          <input type="email" id="signupEmail" placeholder="you@example.com" required>
+        </label>
+
+        <label class="login-field">
+          <span>Password</span>
+          <input type="password" id="signupPassword" placeholder="Create a password" required>
+        </label>
+
+        <button type="submit" class="login-submit">
+          Create Account
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <p class="login-note">Demo signup — no real account is created or verified.</p>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= LOCATION MODAL ================= -->
+
+<div class="location-modal-overlay" id="locationModalOverlay">
+
+  <div class="location-modal">
+
+    <div class="location-header">
+
+      <div>
+        <i class="fa-solid fa-location-dot"></i>
+        Choose Your Location
+      </div>
+
+      <button id="locationModalClose">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+    </div>
+
+    <div class="location-body">
+
+      <input
+        type="text"
+        id="locationSearch"
+        placeholder="Search for a city or pincode"
+      >
+
+      <div class="location-grid" id="locationGrid"></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= CHECKOUT MODAL ================= -->
+
+<div class="checkout-modal-overlay" id="checkoutModalOverlay">
+
+  <div class="checkout-modal">
+
+    <button class="modal-close" id="checkoutModalClose">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div class="checkout-steps">
+      <div class="checkout-step active" data-step="1"><span>1</span>Address</div>
+      <div class="checkout-step-line"></div>
+      <div class="checkout-step" data-step="2"><span>2</span>Review</div>
+      <div class="checkout-step-line"></div>
+      <div class="checkout-step" data-step="3"><span>3</span>Done</div>
+    </div>
+
+    <!-- STEP 1: ADDRESS -->
+    <div class="checkout-panel active" data-panel="1">
+
+      <h3>Shipping Address</h3>
+
+      <div class="checkout-field-row">
+
+        <label class="checkout-field">
+          <span>Full Name</span>
+          <input type="text" id="checkoutName" placeholder="Your name">
+        </label>
+
+        <label class="checkout-field">
+          <span>Phone Number</span>
+          <input type="tel" id="checkoutPhone" placeholder="10-digit mobile number">
+        </label>
+
+      </div>
+
+      <label class="checkout-field">
+        <span>Address</span>
+        <input type="text" id="checkoutAddress" placeholder="House no, street, area">
+      </label>
+
+      <div class="checkout-field-row">
+
+        <label class="checkout-field">
+          <span>City</span>
+          <input type="text" id="checkoutCity" placeholder="City">
+        </label>
+
+        <label class="checkout-field">
+          <span>Pincode</span>
+          <input type="text" id="checkoutPincode" placeholder="6-digit pincode">
+        </label>
+
+      </div>
+
+      <button class="checkout-next-btn" id="toStep2">
+        Continue to Review
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+
+    </div>
+
+    <!-- STEP 2: REVIEW -->
+    <div class="checkout-panel" data-panel="2">
+
+      <h3>Review Your Order</h3>
+
+      <div class="checkout-order-items" id="checkoutOrderItems"></div>
+
+      <div class="checkout-summary">
+        <div><span>Subtotal</span><strong id="checkoutSubtotal">₹0</strong></div>
+        <div><span>Delivery</span><strong class="checkout-free">FREE</strong></div>
+        <div class="checkout-summary-total"><span>Total</span><strong id="checkoutGrandTotal">₹0</strong></div>
+      </div>
+
+      <div class="checkout-panel-actions">
+        <button class="checkout-back-btn" id="toStep1Back">
+          <i class="fa-solid fa-arrow-left"></i>
+          Back
+        </button>
+        <button class="checkout-next-btn" id="placeOrderBtn">
+          Place Order
+          <i class="fa-solid fa-check"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- STEP 3: SUCCESS -->
+    <div class="checkout-panel" data-panel="3">
+
+      <div class="checkout-success">
+
+        <div class="checkout-check">
+          <i class="fa-solid fa-check"></i>
+        </div>
+
+        <h3>Order Placed Successfully!</h3>
+
+        <p>Your order <strong id="checkoutOrderId">#SN00000</strong> has been placed.</p>
+        <p class="checkout-demo-note">Demo order — no real payment or shipment is processed.</p>
+
+        <button class="checkout-next-btn" id="checkoutDoneBtn">
+          Continue Shopping
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div class="toast" id="toast">
+
+  <i class="fa-solid fa-circle-check"></i>
+
+  <span id="toastText">
+    Added to cart
+  </span>
+
+</div>
+
+
+<!-- ================= LIVE ACTIVITY POPUP ================= -->
+
+<div class="live-activity" id="liveActivity">
+
+  <img id="liveActivityImg" src="" alt="">
+
+  <div class="live-activity-info">
+    <strong id="liveActivityText">Someone in Mumbai bought this</strong>
+    <span id="liveActivityTime">Just now</span>
+  </div>
+
+  <button class="live-activity-close" id="liveActivityClose">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <div class="footer-main">
+
+    <div class="footer-brand">
+
+      <div class="footer-logo">
+        <i class="fa-solid fa-bag-shopping"></i>
+        ShopNova
+      </div>
+
+      <p>
+        Your modern online shopping destination for fashion,
+        electronics, beauty, home and more.
+      </p>
+
+      <div class="socials">
+
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Shop</h3>
+
+      <button data-category="fashion">Fashion</button>
+      <button data-category="electronics">Electronics</button>
+      <button data-category="shoes">Shoes</button>
+      <button data-category="beauty">Beauty</button>
+      <button data-category="home">Home</button>
+      <button data-category="gaming">Gaming</button>
+      <button data-category="innerwear">Innerwear</button>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Customer Care</h3>
+
+      <a href="#">Contact Us</a>
+      <a href="#">Help Center</a>
+      <a href="#">Shipping</a>
+      <a href="#">Returns</a>
+      <a href="#">FAQs</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>About</h3>
+
+      <a href="#">About ShopNova</a>
+      <a href="#">Careers</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Become a Seller</a>
+
+    </div>
+
+
+    <div class="footer-column newsletter">
+
+      <h3>Get Offers</h3>
+
+      <p>Subscribe for exclusive deals.</p>
+
+      <div class="newsletter-box">
+
+        <input
+          type="email"
+          id="newsletterEmail"
+          placeholder="Your email"
+        >
+
+        <button id="subscribeBtn">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <span>
+      © <span id="year"></span> ShopNova. Demo E-Commerce Project.
+    </span>
+
+    <span>
+      Made with ❤️ for learning
+    </span>
+
+  </div>
+
+</footer>
+
+
+<button class="back-top" id="backTop">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
