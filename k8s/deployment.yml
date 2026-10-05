@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: e-comm
-        image: shyam8080/e-comm:1
+        image: shyam8080/e-comm-app:3
         ports:
           - containerPort: 80
