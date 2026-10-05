@@ -1,0 +1,16 @@
+/* ShopNova v14 — search results page */
+.clear-search-btn { display: none; padding: 9px 16px; border-radius: 30px; background: #fee2e2; color: #b91c1c; font-weight: 800; font-size: 12px; }
+body.search-mode .clear-search-btn { display: inline-block; }
+
+/* hide all home-page sections while in search-results mode, keep header/nav/footer */
+body.search-mode .promo-marquee,
+body.search-mode .h2-hero, body.search-mode .h3-stats, body.search-mode .h2-cats,
+body.search-mode .h2-trend, body.search-mode .h3-looks, body.search-mode .h2-banners,
+body.search-mode .h2-testi, body.search-mode .h2-strip, body.search-mode .cat-rail,
+body.search-mode #heroAd, body.search-mode #categories, body.search-mode #deals,
+body.search-mode #men, body.search-mode #women, body.search-mode #kids,
+body.search-mode .features, body.search-mode .home-extra { display: none !important; }
+
+body.search-mode .products-section { padding-top: 24px; min-height: 70vh; }
+body.search-mode .products-heading { flex-direction: column; align-items: flex-start; gap: 14px; }
+body.search-mode #productTitle { font-size: 24px; }

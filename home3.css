@@ -1,0 +1,37 @@
+/* ShopNova v11 — premium home page polish */
+.h2-hero { position: relative; overflow: hidden; background: linear-gradient(170deg, #fff7ee 0%, #fdeee5 45%, #fff 85%); }
+.h3-blobs { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.h3-blobs i { position: absolute; border-radius: 50%; filter: blur(70px); opacity: .45; transition: transform .3s ease-out; }
+.h3-blobs i:nth-child(1) { width: 320px; height: 320px; background: #ffb020; top: -80px; left: -40px; }
+.h3-blobs i:nth-child(2) { width: 260px; height: 260px; background: #ff5e9c; bottom: -60px; right: 10%; }
+.h3-blobs i:nth-child(3) { width: 220px; height: 220px; background: #60a5fa; top: 30%; right: -40px; }
+.h2-hero-grid, .h2-hero .h2-badge { position: relative; z-index: 1; }
+.h2-main h1 { text-shadow: 0 2px 0 rgba(255,255,255,.6); }
+.h2-card { backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,.6); }
+
+.h3-stats { max-width: 1300px; margin: -8px auto 20px; padding: 0 25px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; position: relative; z-index: 1; }
+.h3-stats > div { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 18px 10px; text-align: center; box-shadow: 0 8px 24px rgba(0,0,0,.05); }
+.h3-stats b { display: block; font-size: clamp(20px, 3vw, 30px); font-weight: 900; background: linear-gradient(90deg, #ff6a00, #ff3d81); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.h3-stats span { display: block; font-size: 11px; color: #777; margin-top: 4px; font-weight: 700; }
+
+.h3-looks { max-width: 1300px; margin: auto; padding: 10px 25px 10px; }
+.h3-looks-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.h3-look { position: relative; border-radius: 18px; overflow: hidden; aspect-ratio: 3 / 4; cursor: pointer; }
+.h3-look img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+.h3-look:hover img { transform: scale(1.09); }
+.h3-look-ov { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; color: #fff; background: linear-gradient(0deg, rgba(0,0,0,.72), transparent 60%); }
+.h3-look-ov b { font-size: 14.5px; } .h3-look-ov em { font-style: normal; font-size: 11.5px; opacity: 0; transform: translateY(6px); transition: .3s; margin-top: 4px; }
+.h3-look:hover .h3-look-ov em { opacity: 1; transform: none; }
+
+.h3-avatar { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg, #ffe8cc, #ffd0e0); display: inline-grid; place-items: center; font-size: 18px; margin-bottom: 10px; }
+
+.h3-pop { opacity: 0; transform: translateY(26px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
+.h3-pop.h3-in { opacity: 1; transform: none; }
+
+@media (max-width: 900px) {
+  .h3-stats { grid-template-columns: repeat(2, 1fr); }
+  .h3-looks-row { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .h3-stats > div { padding: 14px 6px; }
+}

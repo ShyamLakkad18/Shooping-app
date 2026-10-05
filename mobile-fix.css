@@ -1,0 +1,134 @@
+/* ========================================================================
+   ShopNova v11 — full-site mobile fix pass (loaded last, highest priority)
+   ======================================================================== */
+
+/* --- global safety: no sideways scroll, readable base size --- */
+html, body { max-width: 100%; overflow-x: hidden; }
+* { -webkit-text-size-adjust: 100%; }
+img, video, svg { max-width: 100%; height: auto; }
+
+/* --- consistent fixed-element stacking on small screens (avoid overlap) --- */
+@media (max-width: 900px) {
+  :root { --bn-h: 62px; }
+  body.ready { padding-bottom: var(--bn-h); }
+  .bottom-nav { height: var(--bn-h); padding-bottom: env(safe-area-inset-bottom, 0px); }
+  .back-top { bottom: calc(var(--bn-h) + 16px); right: 14px; }
+  .toast { bottom: calc(var(--bn-h) + 16px); left: 14px; right: 14px; width: auto; text-align: center; justify-content: center; }
+  .live-activity { bottom: calc(var(--bn-h) + 16px); left: 12px; right: 12px; width: auto; }
+  .cmp-bar { bottom: calc(var(--bn-h) + 12px); max-width: calc(100vw - 24px); }
+  .spin-fab { bottom: calc(var(--bn-h) + 70px); right: 14px; width: 48px; height: 48px; font-size: 20px; }
+  .notif-ask { bottom: calc(var(--bn-h) + 16px); left: 12px; right: 12px; max-width: none; }
+  .offline-bar { padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px)); bottom: var(--bn-h); }
+  .dark-btn { display: none; } /* keep header tidy on phones; dark mode toggle stays in sidebar via Admin/Profile if needed */
+}
+
+/* --- header / search, all breakpoints --- */
+@media (max-width: 900px) {
+  .top-header { gap: 8px; }
+  .search-box { height: 42px; }
+  .search-box select { display: none; }
+  .search-box input { font-size: 13.5px; }
+  .mic-btn { width: 38px; }
+  .suggest { top: 48px; font-size: 12.5px; }
+}
+@media (max-width: 480px) {
+  .logo a { font-size: 17px; }
+  .logo-icon { width: 30px; height: 30px; font-size: 14px; }
+  .search-box { height: 40px; border-radius: 30px; }
+  .search-box button { width: 46px; }
+}
+
+/* --- promo marquee / category rail --- */
+@media (max-width: 600px) {
+  .promo-marquee { font-size: 11px; }
+  .cat-rail { padding: 10px 10px; gap: 8px; }
+  .cat-rail button span { width: 48px; height: 48px; font-size: 20px; }
+  .cat-rail button { font-size: 10.5px; }
+}
+
+/* --- new home page sections --- */
+@media (max-width: 600px) {
+  .h2-hero { padding: 28px 14px 6px; }
+  .h2-badge { font-size: 11px; padding: 7px 12px; }
+  .h2-main h1 { letter-spacing: -1px; }
+  .h2-main > p { font-size: 13.5px; }
+  .h2-search { padding: 5px 5px 5px 14px; }
+  .h2-search input { height: 40px; font-size: 13px; }
+  .h2-search button { height: 40px; padding: 0 16px; font-size: 13px; }
+  .h2-cta-row { gap: 10px; }
+  .h2-cta { padding: 12px 18px; font-size: 13.5px; }
+  .h2-trust { width: 100%; }
+  .h2-card { max-width: 260px; }
+  .h2-t-card { flex: 0 0 150px; }
+  .h2-banner { min-height: 150px; padding: 18px; }
+  .h2-banner h3 { font-size: 21px; }
+  .h2-strip > div { padding: 16px 10px; }
+  .h2-strip b { font-size: 11.5px; } .h2-strip span { font-size: 9.5px; }
+}
+@media (max-width: 380px) {
+  .h3-stats { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .h3-looks-row { grid-template-columns: 1fr 1fr; gap: 10px; }
+}
+
+/* --- category grid / filters / sort bar --- */
+@media (max-width: 600px) {
+  .sort-bar { flex-direction: column; align-items: stretch; gap: 10px; }
+  .sort-bar select, .flt-toggle { width: 100%; }
+  .flt-panel { flex-direction: column; gap: 16px; }
+  .flt-row { max-width: none; }
+  .load-more { width: 100%; }
+}
+
+/* --- all overlay modals: consistent, safe, scrollable on small screens --- */
+@media (max-width: 600px) {
+  .ord-overlay, .checkout-modal-overlay, .location-modal-overlay, .login-modal-overlay, .product-modal-overlay { padding: 0; align-items: flex-end; }
+  .ord-modal, .checkout-modal, .location-modal, .product-modal { width: 100%; max-width: 100%; max-height: 92vh; border-radius: 20px 20px 0 0; padding: 20px 16px calc(20px + env(safe-area-inset-bottom, 0px)); }
+  .login-modal { width: 100%; max-height: 94vh; border-radius: 20px 20px 0 0; }
+  .wheel-wrap { width: 210px; height: 210px; }
+  .pf-form { grid-template-columns: 1fr; }
+  .cmp-wrap table { min-width: 0; font-size: 12px; }
+  .cmp-wrap td img { max-width: 100px; }
+}
+
+/* --- flash sale page --- */
+@media (max-width: 480px) {
+  .fl-head h2 { font-size: 26px; }
+  .fl-time { padding: 8px 16px; font-size: 13px; }
+  .fl-time b { font-size: 17px; }
+  .fl-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 18px 10px 40px; }
+}
+
+/* --- cart / checkout drawers --- */
+@media (max-width: 600px) {
+  .cart-drawer { width: 100%; max-width: 100%; }
+  .checkout-field-row { grid-template-columns: 1fr; }
+  .checkout-steps { gap: 6px; }
+  .checkout-step span { width: 22px; height: 22px; font-size: 11px; }
+  .checkout-step { font-size: 10.5px; }
+}
+
+/* --- admin / profile forms --- */
+@media (max-width: 600px) {
+  .addr { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .addr button { align-self: flex-end; }
+  .ord-f { flex-direction: column; align-items: flex-start; }
+  .trk { font-size: 10px; }
+}
+
+/* --- gate / login screen already has its own breakpoints; small top-ups --- */
+@media (max-width: 480px) {
+  .g-card h3 { font-size: 25px; }
+  .g-form input { height: 48px; font-size: 14px; }
+  .g-submit { height: 50px; font-size: 14px; }
+}
+
+/* --- ensure every button/link has a comfortable tap target --- */
+@media (max-width: 900px) {
+  button, .filter-btn, .m-chip, .sub-chip, .budget, .chip5, .sw { min-height: 38px; }
+}
+
+/* --- product grid stays tidy at very small widths (already 1-2 cols from earlier patches; reinforce) --- */
+@media (max-width: 360px) {
+  .product-grid, .deal-products { grid-template-columns: 1fr; }
+  .product-image { height: 260px; }
+}

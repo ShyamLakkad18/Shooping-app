@@ -1,15 +1,4 @@
-"""
-ShopNova v17 patcher — the REAL fix. An old inline onerror="..." attribute
-(added by the very first patch, on every <img> tag) was silently overriding
-the photo fallback from v16, which is why products still showed the gray
-"ShopNova" placeholder box. This patch neutralizes that old handler and
-becomes the single source of truth for broken-image handling.
-Run AFTER all previous patches, in the same folder:
-    python patch_shopnova_v17.py
-"""
-import sys, shutil
-
-JS = r'''/* ShopNova v17 — the actual fix for broken/placeholder product photos */
+/* ShopNova v17 — the actual fix for broken/placeholder product photos */
 (function () {
 "use strict";
 const $ = (s, r = document) => r.querySelector(s);
@@ -57,23 +46,3 @@ $$("img").forEach(img => {
 });
 console.log("ShopNova v17: old onerror handler removed; photo fallback chain fixed.");
 })();
-'''
-
-def read(p):
-    with open(p, encoding="utf-8", newline=None) as f: return f.read()
-def write(p, s):
-    with open(p, "w", encoding="utf-8", newline="\n") as f: f.write(s)
-
-try:
-    html = read("index.html")
-except FileNotFoundError as e:
-    sys.exit(f"File not found: {e.filename}. Run this inside your ShopNova folder.")
-if "v17.js" in html:
-    sys.exit("v17 already applied.")
-
-shutil.copy("index.html", "index.v17.bak")
-write("v17.js", JS)
-html = html.replace("</body>", '<script src="v17.js"></script>\n</body>', 1)
-write("index.html", html)
-print("Done! New file: v17.js. Open index.html and press Ctrl+F5 (hard refresh is important).")
-print("This removes the old onerror attribute that was overriding your photo fixes.")

@@ -1,0 +1,13 @@
+/* ShopNova v15 */
+.sl-ring { display: none; } /* replaced by sl-orbit below */
+.sl-orbit { position: relative; width: 100px; height: 100px; margin: 0 auto 22px; }
+.sl-orbit i { position: absolute; inset: 0; display: grid; place-items: center; font-size: 30px; color: #ff6a00; }
+.sl-orbit span { position: absolute; width: 10px; height: 10px; border-radius: 50%; background: linear-gradient(90deg, #ff9900, #ff3d81); top: 50%; left: 50%; margin: -5px; animation: orbit 1.4s linear infinite; }
+.sl-orbit span:nth-child(2) { animation-delay: -.47s; opacity: .7; }
+.sl-orbit span:nth-child(3) { animation-delay: -.94s; opacity: .45; }
+@keyframes orbit { from { transform: rotate(0deg) translateX(46px) rotate(0deg); } to { transform: rotate(360deg) translateX(46px) rotate(-360deg); } }
+#slStep { transition: opacity .25s; }
+
+.products-section.sm-in { animation: smIn .5s cubic-bezier(.2,.9,.3,1.05) both; }
+@keyframes smIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+body.sm-loading .products-section { pointer-events: none; }

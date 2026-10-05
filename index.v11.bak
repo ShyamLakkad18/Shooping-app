@@ -41,11 +41,6 @@
   <link rel="stylesheet" href="backend.css">
   <link rel="stylesheet" href="home2.css">
   <link rel="stylesheet" href="extra10.css">
-  <link rel="stylesheet" href="home3.css">
-  <link rel="stylesheet" href="mobile-fix.css">
-  <link rel="stylesheet" href="v12.css">
-  <link rel="stylesheet" href="v14.css">
-  <link rel="stylesheet" href="v15.css">
 </head>
 
 <body>
@@ -1740,12 +1735,5 @@
 <script src="analytics-config.js"></script>
 <script src="home2.js"></script>
 <script src="extra10.js"></script>
-<script src="home3.js"></script>
-<script src="v12.js"></script>
-<script src="v13.js"></script>
-<script src="v14.js"></script>
-<script src="v15.js"></script>
-<script src="v16.js"></script>
-<script src="v17.js"></script>
 </body>
 </html>
